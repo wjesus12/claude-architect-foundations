@@ -1,0 +1,106 @@
+/* ============================================================
+   Claude Architect Foundations — tokens y base
+   Oscuro = terminal de Claude Code · Claro = papel de claude.ai
+   ============================================================ */
+:root {
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+  --sans: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --clay: #D97757;          /* naranja Claude */
+  --clay-hi: #EB8F6E;
+  --clay-lo: #B5583A;
+
+  --r-s: 6px;
+  --r-m: 10px;
+  --r-l: 16px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1b1815;
+  --bg-2: #211d19;
+  --panel: #262119;
+  --panel-2: #2d2720;
+  --well: #17140f;
+  --line: #3a332b;
+  --line-2: #4a4137;
+  --ink: #eee7dc;
+  --ink-2: #c9bfb1;
+  --mute: #9a8e7f;
+  --faint: #6c6256;
+  --accent: var(--clay);
+  --accent-ink: #1b1815;
+  --accent-soft: rgba(217, 119, 87, .14);
+  --ok: #8cc084;
+  --ok-soft: rgba(140, 192, 132, .14);
+  --err: #e5735f;
+  --err-soft: rgba(229, 115, 95, .14);
+  --warn: #e0b85c;
+  --info: #8fb8dc;
+  --violet: #b59ce0;
+  --shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 12px 32px -12px rgba(0,0,0,.6);
+  --glow: 0 0 0 1px rgba(217,119,87,.35), 0 0 28px -4px rgba(217,119,87,.45);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4efe6;
+  --bg-2: #efe8dc;
+  --panel: #fbf8f3;
+  --panel-2: #f6f1e9;
+  --well: #ebe3d5;
+  --line: #ddd2c1;
+  --line-2: #cbbda8;
+  --ink: #2a241e;
+  --ink-2: #4a4036;
+  --mute: #776b5d;
+  --faint: #a0937f;
+  --accent: #c4623f;
+  --accent-ink: #fffaf4;
+  --accent-soft: rgba(196, 98, 63, .11);
+  --ok: #3f8a4a;
+  --ok-soft: rgba(63, 138, 74, .11);
+  --err: #c0442f;
+  --err-soft: rgba(192, 68, 47, .1);
+  --warn: #a8771a;
+  --info: #3c6d99;
+  --violet: #7552b3;
+  --shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 10px 28px -14px rgba(80,55,30,.35);
+  --glow: 0 0 0 1px rgba(196,98,63,.35), 0 0 24px -6px rgba(196,98,63,.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 15px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: clip;   /* clip, no hidden: hidden convierte el body en contenedor de scroll */
+}
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+code, kbd, pre, .mono { font-family: var(--mono); font-variant-ligatures: none; }
+code { font-size: .9em; background: var(--well); border: 1px solid var(--line); padding: .05em .35em; border-radius: 4px; color: var(--ink); }
+kbd { font-size: .78em; border: 1px solid var(--line-2); border-bottom-width: 2px; border-radius: 4px; padding: .05em .4em; color: var(--ink-2); background: var(--panel-2); }
+button { font: inherit; color: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+::selection { background: var(--clay); color: #1b1815; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* scrollbars sobrios */
+* { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}

@@ -1,0 +1,5 @@
+{
+  "_nota": "Credenciales SOLO para pruebas locales en localhost. El localStorage de pruebas se borra al terminar; en uso real el admin se crea en el primer arranque.",
+  "admin": { "name": "Admin Prueba", "password": "prueba-local-1" },
+  "student": { "name": "Estudiante Demo", "pin": "4321" }
+}

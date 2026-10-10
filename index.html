@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Architect Foundations</title>
+  <meta name="description" content="Entrenamiento para la certificación Claude Certified Architect – Foundations (CCAR-F): lecciones, simulacros, labs, arquitecturas y flashcards en inglés, español o modo híbrido.">
+  <meta name="theme-color" content="#1b1815">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="fonts/fonts.css?v=5">
+  <link rel="stylesheet" href="css/base.css?v=5">
+  <link rel="stylesheet" href="css/app.css?v=5">
+  <link rel="stylesheet" href="css/scenes.css?v=5">
+  <link rel="stylesheet" href="css/lessons.css?v=5">
+  <link rel="stylesheet" href="css/practice.css?v=5">
+  <link rel="stylesheet" href="css/academy.css?v=5">
+</head>
+<body>
+  <noscript>Este entrenamiento necesita JavaScript.</noscript>
+
+  <!-- Pantalla de arranque / acceso -->
+  <section id="gate" class="gate" hidden></section>
+
+  <!-- Aplicación -->
+  <div id="app" class="app" hidden>
+    <header class="statusbar" id="statusbar"></header>
+    <aside class="tree" id="tree" aria-label="Navegación"></aside>
+    <main class="view" id="view" tabindex="-1"></main>
+    <section class="term" id="term" aria-label="Terminal">
+      <div class="term__log" id="termLog" role="log" aria-live="polite"></div>
+      <form class="term__line" id="termForm" autocomplete="off">
+        <label for="termInput" class="term__prompt">❯</label>
+        <input id="termInput" class="term__input" spellcheck="false" placeholder="/help — escribe un comando o pulsa Tab">
+        <span class="term__hint" id="termHint"></span>
+      </form>
+    </section>
+    <button class="tree-toggle" id="treeToggle" aria-label="Abrir navegación" aria-expanded="false">☰</button>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/sha256.js?v=5"></script>
+  <script src="js/content/blueprint.js?v=5"></script>
+  <script src="js/i18n.js?v=5"></script>
+  <script src="js/store.js?v=5"></script>
+  <script src="js/gamify.js?v=5"></script>
+  <script src="js/art.js?v=5"></script>
+  <script src="js/scenes.js?v=5"></script>
+  <script src="js/ui.js?v=5"></script>
+  <script src="js/terminal.js?v=5"></script>
+  <script src="js/gate.js?v=5"></script>
+  <script src="js/views.js?v=5"></script>
+  <script src="js/lessons.js?v=5"></script>
+  <script src="js/content/lessons-intro.js?v=5"></script>
+  <script src="js/content/lessons-d1.js?v=5"></script>
+  <script src="js/content/lessons-d2.js?v=5"></script>
+  <script src="js/content/lessons-d3.js?v=5"></script>
+  <script src="js/content/lessons-d4.js?v=5"></script>
+  <script src="js/content/lessons-d5.js?v=5"></script>
+  <script src="js/content/academy-parts.js?v=5"></script>
+  <script src="js/content/academy-a.js?v=5"></script>
+  <script src="js/content/academy-b.js?v=5"></script>
+  <script src="js/content/academy-c.js?v=5"></script>
+  <script src="js/content/academy-d.js?v=5"></script>
+  <script src="js/content/academy-e.js?v=5"></script>
+  <script src="js/content/academy-f.js?v=5"></script>
+  <script src="js/content/academy-g.js?v=5"></script>
+  <script src="js/content/academy-h.js?v=5"></script>
+  <script src="js/content/glossary.js?v=5"></script>
+  <script src="js/academy.js?v=5"></script>
+  <script src="js/content/flashcards.js?v=5"></script>
+  <script src="js/flash.js?v=5"></script>
+  <script src="js/content/labs.js?v=5"></script>
+  <script src="js/labs.js?v=5"></script>
+  <script src="js/content/arch.js?v=5"></script>
+  <script src="js/arch.js?v=5"></script>
+  <script src="js/exam.js?v=5"></script>
+  <script src="js/content/bank-s1.js?v=5"></script>
+  <script src="js/content/bank-s2.js?v=5"></script>
+  <script src="js/content/bank-s3.js?v=5"></script>
+  <script src="js/content/bank-s4.js?v=5"></script>
+  <script src="js/content/bank-s5.js?v=5"></script>
+  <script src="js/content/bank-s6.js?v=5"></script>
+  <script src="js/admin.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
+</body>
+</html>

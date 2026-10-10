@@ -1,0 +1,36 @@
+# Claude Architect Foundations · despliegue en Netlify
+# Sitio estático sin paso de compilación: se publica la carpeta tal cual.
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # CSP: todo el código y los recursos salen del propio sitio.
+    # Sin scripts en línea, sin onclick="" y sin eval.
+    # Se permiten estilos en línea porque las plantillas usan style="--i:…" para animaciones.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+
+# Las fuentes no cambian nunca.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS y JS llevan ?v=N en index.html: al cambiar un archivo se sube N.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+

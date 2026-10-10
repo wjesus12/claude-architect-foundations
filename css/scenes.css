@@ -1,0 +1,76 @@
+/* Escenas SVG animadas de los dominios */
+.scene { display: block; width: 100%; height: auto; font-family: var(--mono); }
+.scene text { fill: var(--ink-2); white-space: pre; }
+.sc-t { font-size: 11px; font-weight: 700; text-anchor: middle; fill: var(--ink) !important; }
+.sc-s { font-size: 9px; text-anchor: middle; fill: var(--mute) !important; }
+.sc-left { text-anchor: start; }
+.sc-right { text-anchor: end; }
+.sc-mid { text-anchor: middle; }
+.sc-code { font-size: 10.5px; fill: var(--ink-2); }
+.sc-dim { fill: var(--faint) !important; }
+.sc-panel { fill: var(--panel); stroke: var(--line); }
+
+/* D1 bucle */
+.sc-track { fill: none; stroke: var(--line-2); stroke-width: 2; }
+.sc-flow { fill: none; stroke: var(--clay); stroke-width: 2; stroke-dasharray: 6 10; animation: flow 1.2s linear infinite; opacity: .7; }
+@keyframes flow { to { stroke-dashoffset: -32; } }
+.sc-node rect { fill: var(--panel); stroke: var(--line-2); }
+.sc-node--hot rect { stroke: var(--clay); animation: hot 2.8s ease-in-out infinite; }
+@keyframes hot { 0%,100% { fill: var(--panel); } 50% { fill: var(--accent-soft); } }
+.sc-node text { text-anchor: middle; }
+.sc-cycle { fill: var(--clay); }
+.sc-token { fill: var(--clay); }
+.sc-token-halo { fill: var(--clay); opacity: .2; }
+.sc-center { font-size: 10px; text-anchor: middle; fill: var(--mute) !important; }
+.sc-center--code { fill: var(--clay) !important; font-weight: 700; }
+.sc-center--end { fill: var(--ok) !important; animation: endPulse 5.6s steps(1) infinite; }
+@keyframes endPulse { 0%, 70% { opacity: .25; } 72%, 100% { opacity: 1; } }
+
+/* D2 MCP */
+.sc-agent rect, .sc-server rect { fill: var(--panel); stroke: var(--line-2); }
+.sc-server rect { stroke: var(--clay); stroke-width: 1.5; }
+.sc-agent text, .sc-server text { text-anchor: middle; }
+.sc-wire { fill: none; stroke: var(--line-2); stroke-width: 1.4; }
+.sc-wire--bold { stroke-width: 2; }
+.sc-tool rect { fill: var(--well); stroke: var(--line-2); }
+.sc-tool text { font-size: 9px !important; }
+.sc-tool--err rect { stroke: var(--err); animation: errBlink 3.2s steps(1) infinite 1.6s; }
+@keyframes errBlink { 0%, 45% { fill: var(--well); } 50%, 95% { fill: var(--err-soft); } }
+.sc-pkt { fill: var(--clay); }
+.sc-pkt--err { fill: var(--err); }
+.sc-errtag rect { fill: var(--err-soft); stroke: var(--err); }
+.sc-errtag text { fill: var(--err) !important; font-size: 9.5px; }
+.sc-errtag { animation: tagIn 3.2s ease-in-out infinite 1.6s; opacity: 0; }
+@keyframes tagIn { 0% { opacity: 0; } 50%, 85% { opacity: 1; } 100% { opacity: 0; } }
+
+/* D3 árbol de configuración */
+.sc-row { opacity: 0; animation: rowIn 9s steps(1) infinite; animation-delay: calc(var(--i) * .45s); }
+@keyframes rowIn { 0% { opacity: 0; } 2%, 88% { opacity: 1; } 100% { opacity: 0; } }
+.sc-note { font-size: 9.5px; fill: var(--clay) !important; }
+.sc-cursor { fill: var(--clay); animation: caret 1s steps(1) infinite; }
+.sc-mode rect { fill: var(--accent-soft); stroke: var(--clay); }
+.sc-mode text { fill: var(--clay) !important; }
+
+/* D4 JSON */
+.scene--prompts .sc-row { animation-duration: 8s; }
+.sc-key { fill: var(--info); }
+.sc-val { fill: var(--ok); }
+.sc-val--null { fill: var(--violet); }
+.sc-check { font-size: 9.5px; fill: var(--ok) !important; }
+.sc-check--null { fill: var(--violet) !important; }
+.sc-chip rect { fill: var(--accent-soft); stroke: var(--clay); }
+.sc-chip text { fill: var(--clay) !important; }
+
+/* D5 contexto */
+.sc-ctx__frame { fill: var(--well); stroke: var(--line-2); stroke-dasharray: 4 4; }
+.sc-ctx--keep { animation: keepGlow 7s ease-in-out infinite; }
+@keyframes keepGlow { 0%, 60% { opacity: 1; } 66% { opacity: .55; } 72%, 100% { opacity: 1; } }
+.sc-ctx__t { font-size: 9px; fill: #1b1815 !important; font-weight: 700; pointer-events: none; }
+.sc-ctx__t--fade { animation: tFade 7s steps(1) infinite; }
+@keyframes tFade { 0%, 22% { opacity: 0; } 25%, 62% { opacity: 1; } 64%, 100% { opacity: 0; } }
+.sc-compact { animation: compactIn 7s ease-in-out infinite; opacity: 0; }
+.sc-compact rect { fill: var(--clay); }
+.sc-compact text { fill: #1b1815 !important; font-weight: 700; }
+@keyframes compactIn { 0%, 55% { opacity: 0; transform: translateY(6px); } 60%, 75% { opacity: 1; transform: none; } 82%, 100% { opacity: 0; } }
+.sc-pin { fill: var(--clay) !important; }
+.sc-ctx__meter { fill: var(--mute) !important; }

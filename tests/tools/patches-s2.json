@@ -1,0 +1,76 @@
+{
+  "s1q05": { "2": ["Always escalate messages that contain more than one issue to a human agent, since combined requests carry a higher risk of mistakes.", "Escalar siempre a un agente humano los mensajes con más de un tema, ya que las peticiones combinadas tienen más riesgo de error."] },
+  "s1q10": { "3": ["Put a decision-tree classifier in front of the agent that picks one of several predefined, fixed tool sequences for each incoming request.", "Poner delante del agente un clasificador de árbol de decisión que elija una de varias secuencias fijas y predefinidas de tools para cada petición."] },
+  "s1q12": { "1": ["Resume yesterday's session as is and add an instruction telling the agent to double-check every order's status carefully before acting.", "Reanudar la sesión de ayer tal cual y añadir una instrucción para que el agente revise con cuidado el estado de cada pedido antes de actuar."] },
+  "s1q29": { "1": ["Summarize less often, for example every 60 turns instead of every 20, so that fewer amounts and dates get compressed away.", "Resumir con menos frecuencia, por ejemplo cada 60 turnos en lugar de cada 20, para que se compriman menos importes y fechas."] },
+  "s1q31": { "2": ["Switch to a larger model with a longer context window that can attend to all 20 pages of the policy with equal care.", "Cambiar a un modelo más grande con una ventana de contexto mayor que atienda con el mismo cuidado las 20 páginas de la política."] },
+
+  "s2q04": { "1": ["Send the new developer a copy of the tech lead's personal file to place in their home directory.", "Enviar al nuevo desarrollador una copia del archivo personal del líder técnico para que lo ponga en su carpeta personal."] },
+  "s2q05": { "3": ["Put the payments standards in ~/.claude/CLAUDE.md for every developer who works on payments.", "Poner los estándares de pagos en el ~/.claude/CLAUDE.md de cada desarrollador que trabaje en pagos."] },
+  "s2q07": {
+    "2": ["Move each topic into its own skill in .claude/skills/ so developers load testing or deployment rules only when they need them.", "Mover cada tema a su propia skill en .claude/skills/ para que los desarrolladores carguen las reglas de testing o despliegue solo cuando las necesiten."],
+    "1": ["Shorten it by deleting older rules and keeping only the most frequently used conventions.", "Acortarlo borrando las reglas más antiguas y conservando solo las convenciones más usadas."]
+  },
+  "s2q09": {
+    "1": ["Write a clear instruction in the skill body such as \"never run Bash or delete files under any circumstance\".", "Escribir en el cuerpo de la skill una instrucción clara como «nunca ejecutes Bash ni borres archivos bajo ninguna circunstancia»."],
+    "2": ["Add context: fork to the frontmatter so the skill runs isolated from the main conversation and its tools.", "Añadir context: fork al frontmatter para que la skill se ejecute aislada de la conversación principal y de sus tools."]
+  },
+  "s2q12": {
+    "2": ["Create ~/.claude/skills/review with the same name so your version overrides the team skill on your machine.", "Crear ~/.claude/skills/review con el mismo nombre para que tu versión sustituya a la del equipo en tu máquina."]
+  },
+  "s2q13": {
+    "1": ["A \"Terraform conventions\" section near the top of the root CLAUDE.md", "Una sección «Terraform conventions» al principio del CLAUDE.md raíz"],
+    "2": [".claude/terraform.json containing {\"apply_to\": \"terraform/**\"}", ".claude/terraform.json con {\"apply_to\": \"terraform/**\"}"]
+  },
+  "s2q16": {
+    "1": ["Use direct execution file by file, fixing each call site as you go, without a written plan.", "Usar ejecución directa archivo por archivo, arreglando cada llamada sobre la marcha, sin un plan escrito."],
+    "2": ["Stay in plan mode for the entire migration so every change is reviewed before it is written.", "Quedarse en plan mode durante toda la migración para que cada cambio se revise antes de escribirlo."]
+  },
+  "s2q17": {
+    "1": ["A model with a larger context window, so all 60 files fit alongside the plan.", "Un modelo con una ventana de contexto mayor, para que los 60 archivos quepan junto al plan."],
+    "2": ["Read the key files twice so Claude remembers them better in later phases.", "Leer dos veces los archivos clave para que Claude los recuerde mejor en las fases siguientes."]
+  },
+  "s2q19": {
+    "1": ["Ask for the implementation immediately and iterate on whatever problems appear.", "Pedir la implementación de inmediato e iterar sobre los problemas que aparezcan."],
+    "3": ["Add \"be thorough about caching edge cases\" to the project CLAUDE.md.", "Añadir «sé minucioso con los casos límite de caché» al CLAUDE.md del proyecto."]
+  },
+  "s2q20": {
+    "1": ["Report all three bugs in separate messages, one at a time, so each fix stays small and easy to review.", "Reportar los tres bugs en mensajes separados, uno a uno, para que cada arreglo sea pequeño y fácil de revisar."]
+  },
+  "s2q21": {
+    "1": ["The model is hallucinating because of randomness; lower the temperature and repeat the questions.", "El modelo alucina por aleatoriedad; baja la temperatura y repite las preguntas."],
+    "2": ["The repository is simply too large for Claude Code; split it into smaller repos first.", "El repositorio es demasiado grande para Claude Code; divídelo antes en repos más pequeños."]
+  },
+  "s2q23": {
+    "2": ["Start a brand-new session for each narrow question so none of them pollutes the others.", "Empezar una sesión totalmente nueva para cada pregunta acotada, para que ninguna contamine a las demás."],
+    "3": ["Paste the relevant directories into the main prompt so every question is answered in one place.", "Pegar los directorios relevantes en el prompt principal para responder todas las preguntas en un solo lugar."]
+  },
+  "s2q24": {
+    "1": ["They automatically inherit the main session's history, so nothing extra needs to be passed.", "Heredan automáticamente el historial de la sesión principal, así que no hace falta pasar nada más."],
+    "3": ["Pass each subagent the full raw transcript of phase 1 so no detail is lost.", "Pasar a cada subagente la conversación cruda completa de la fase 1 para no perder ningún detalle."]
+  },
+  "s2q25": {
+    "1": ["Paste the full output twice so nothing gets missed.", "Pegar la salida completa dos veces para que no se pierda nada."],
+    "2": ["Switch to a model with a larger context window.", "Cambiar a un modelo con una ventana de contexto mayor."]
+  },
+  "s2q28": {
+    "2": ["Use Grep with a replacement pattern to change only that value.", "Usar Grep con un patrón de reemplazo para cambiar solo ese valor."],
+    "3": ["Use Bash with sed to replace all 7 matches at once.", "Usar Bash con sed para reemplazar las 7 coincidencias a la vez."]
+  },
+  "s2q30": {
+    "1": ["Alternate between the two strategies in the same session, turn by turn.", "Alternar las dos estrategias en la misma sesión, turno a turno."],
+    "2": ["Resume the analysis session twice in sequence, once per strategy.", "Reanudar la sesión de análisis dos veces seguidas, una por estrategia."]
+  },
+  "s2q31": {
+    "1": ["Ask it to re-read the entire repository so nothing stale remains.", "Pedirle que vuelva a leer todo el repositorio para que no quede nada obsoleto."],
+    "2": ["Say nothing; the agent will notice the changes when it reads them again.", "No decir nada; el agente notará los cambios cuando vuelva a leerlos."]
+  },
+  "s2q32": {
+    "1": ["Resume the old session as is, since it already contains the full analysis.", "Reanudar la sesión vieja tal cual, ya que contiene todo el análisis."],
+    "2": ["Resume the old session and run /compact to clear out outdated details.", "Reanudar la sesión vieja y ejecutar /compact para limpiar los detalles desactualizados."]
+  },
+  "s2q33": {
+    "1": ["Generate one test file per source file in alphabetical order until all 80 files are covered.", "Generar un archivo de test por archivo fuente en orden alfabético hasta cubrir los 80 archivos."],
+    "2": ["Ask for all the tests in one long response so they share a consistent style and fixtures.", "Pedir todos los tests en una sola respuesta larga para que compartan estilo y fixtures."]
+  }
+}

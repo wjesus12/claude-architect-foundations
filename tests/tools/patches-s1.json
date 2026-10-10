@@ -1,0 +1,110 @@
+{
+  "s1q02": {
+    "1": ["Stop when the assistant text contains a closing phrase such as \"anything else I can help with?\"", "Parar cuando el texto del asistente contenga una frase de cierre como «¿algo más en lo que pueda ayudar?»"],
+    "3": ["Stop whenever the previous turn produced no tool_result, since that means no work is pending", "Parar cuando el turno anterior no produjo ningún tool_result, ya que eso significa que no queda trabajo pendiente"]
+  },
+  "s1q03": {
+    "1": ["The model finished normally: max_tokens is just another end_turn variant, so show the answer as final.", "El modelo terminó con normalidad: max_tokens es solo otra variante de end_turn, así que muestra la respuesta como final."],
+    "3": ["The conversation history is now too long, so the oldest turns must be deleted before the next request.", "El historial ya es demasiado largo, así que hay que borrar los turnos más antiguos antes de la siguiente petición."]
+  },
+  "s1q04": {
+    "1": ["The model's context window is too small to keep a full order record across several conversation turns.", "La ventana de contexto del modelo es demasiado pequeña para conservar un pedido completo durante varios turnos."],
+    "3": ["lookup_order needs a richer description so the model knows it should reuse earlier lookup results.", "lookup_order necesita una descripción más rica para que el modelo sepa que debe reutilizar las consultas anteriores."]
+  },
+  "s1q05": {
+    "1": ["Ask the customer to open a separate ticket for each issue so every case keeps its own clean history.", "Pedir al cliente que abra un ticket por cada tema para que cada caso conserve su propio historial limpio."],
+    "2": ["Always escalate multi-issue messages to a human, since combined requests carry a higher risk of mistakes.", "Escalar siempre a una persona los mensajes con varios temas, ya que las peticiones combinadas tienen más riesgo de error."]
+  },
+  "s1q06": {
+    "1": ["A priority flag plus the customer's last message, so the human can jump straight into the conversation.", "Un indicador de prioridad más el último mensaje del cliente, para que la persona entre directamente a la conversación."],
+    "3": ["A sentiment score and frustration level so the human knows how upset the customer is before replying.", "Una puntuación de sentimiento y nivel de frustración para que la persona sepa cuán molesto está el cliente antes de responder."]
+  },
+  "s1q07": {
+    "1": ["A PostToolUse hook on process_refund that alerts a supervisor whenever a refund above $500 completes.", "Un hook PostToolUse en process_refund que avise a un supervisor cada vez que se complete un reembolso de más de 500 $."],
+    "3": ["Have the model rate its confidence from 1 to 10 before each refund and block anything rated below 8.", "Que el modelo puntúe su confianza del 1 al 10 antes de cada reembolso y bloquear todo lo que puntúe menos de 8."]
+  },
+  "s1q08": {
+    "1": ["Add detailed date-conversion instructions and a format table to the system prompt for every source system.", "Añadir instrucciones detalladas de conversión de fechas y una tabla de formatos al system prompt para cada sistema."],
+    "3": ["Switch to a larger model that is better at interpreting mixed date formats from different systems.", "Cambiar a un modelo más grande que interprete mejor formatos de fecha mezclados de distintos sistemas."]
+  },
+  "s1q09": {
+    "1": ["Lower the hook threshold to $400 so that amounts just under the limit are also blocked by the same rule.", "Bajar el umbral del hook a 400 $ para que la misma regla bloquee también los importes justo por debajo del límite."],
+    "3": ["Raise the temperature so the agent explores other strategies instead of repeating the same refund call.", "Subir la temperatura para que el agente explore otras estrategias en lugar de repetir la misma llamada de reembolso."]
+  },
+  "s1q10": {
+    "1": ["Adopt the fixed sequence for every request type, because a predictable order is easier to audit and test.", "Adoptar la secuencia fija para todo tipo de peticiones, porque un orden predecible es más fácil de auditar y probar."],
+    "3": ["Put a decision-tree classifier in front of the agent that selects one of several fixed tool sequences per request.", "Poner delante del agente un clasificador de árbol de decisión que elija una de varias secuencias fijas de tools por petición."]
+  },
+  "s1q12": {
+    "1": ["Resume yesterday's session and add an instruction telling the agent to double-check order states before acting.", "Reanudar la sesión de ayer y añadir una instrucción para que el agente revise el estado de los pedidos antes de actuar."],
+    "2": ["Fork yesterday's session so the agent keeps the full history but continues on a separate, clean branch.", "Hacer fork de la sesión de ayer para que el agente conserve todo el historial pero continúe en una rama separada y limpia."]
+  },
+  "s1q13": {
+    "1": ["The primary way to decide that the task is complete, since it keeps cost and latency predictable.", "La forma principal de decidir que la tarea terminó, ya que mantiene predecibles el costo y la latencia."],
+    "3": ["A trigger that forces escalation to a human once the conversation passes three turns.", "Un disparador que fuerza el escalado a una persona cuando la conversación supera los tres turnos."]
+  },
+  "s1q14": {
+    "1": ["A fixed chain that runs every available check for every dispute, in the same order each time.", "Una cadena fija que ejecute todas las comprobaciones disponibles en cada disputa, siempre en el mismo orden."],
+    "3": ["Ask the customer which of the possible root causes applies before running any lookups.", "Preguntar al cliente cuál de las posibles causas aplica antes de hacer ninguna consulta."]
+  },
+  "s1q16": {
+    "1": ["Limit retries to one attempt for every error so neither timeouts nor policy errors loop for long.", "Limitar a un reintento todos los errores para que ni los timeouts ni los errores de política se repitan mucho."],
+    "2": ["Return isError: false with an explanatory message for policy violations, so the agent stops retrying them.", "Devolver isError: false con un mensaje explicativo para las violaciones de política, para que el agente deje de reintentarlas."]
+  },
+  "s1q17": {
+    "1": ["Return a transient error marked retryable, so the agent tries again in case the order index is still updating.", "Devolver un error transitorio marcado como reintentable, por si el índice de pedidos aún se está actualizando."],
+    "3": ["Raise an exception so the agent stops and asks the customer to confirm their email address first.", "Lanzar una excepción para que el agente se detenga y pida al cliente que confirme primero su email."]
+  },
+  "s1q18": {
+    "1": ["Add a system prompt section that lists all 18 tools ranked by importance with one example each.", "Añadir una sección al system prompt que liste las 18 tools ordenadas por importancia, con un ejemplo de cada una."],
+    "2": ["Use a model with a larger context window so all 18 tool definitions fit comfortably in every request.", "Usar un modelo con una ventana de contexto mayor para que las 18 definiciones de tools quepan holgadas en cada petición."]
+  },
+  "s1q19": {
+    "1": ["Set tool_choice to \"any\" for every turn so the model is always required to call one of its tools.", "Poner tool_choice en \"any\" en todos los turnos para que el modelo siempre esté obligado a llamar a una de sus tools."],
+    "3": ["Remove all other tools from the request until get_customer has run, then add them back for later turns.", "Quitar todas las demás tools de la petición hasta que se ejecute get_customer y volver a añadirlas en los turnos siguientes."]
+  },
+  "s1q20": {
+    "1": ["Add a list_all_documents tool that the agent calls at the start of each conversation to see what exists.", "Añadir una tool list_all_documents que el agente llame al inicio de cada conversación para ver qué existe."],
+    "2": ["Paste the full text of every policy into the system prompt so the agent never has to look them up.", "Pegar el texto completo de todas las políticas en el system prompt para que el agente nunca tenga que buscarlas."]
+  },
+  "s1q21": {
+    "1": ["In each developer's ~/.claude.json, with the token written inline so nothing secret is committed.", "En el ~/.claude.json de cada desarrollador, con el token escrito directamente para no versionar nada secreto."],
+    "3": ["In the project .mcp.json with the token inline, since the repository is private to the team anyway.", "En el .mcp.json del proyecto con el token escrito, ya que de todos modos el repositorio es privado del equipo."]
+  },
+  "s1q22": {
+    "2": ["Add a PostToolUse hook that converts store credit into a card refund whenever the customer asked for one.", "Añadir un hook PostToolUse que convierta el crédito en tienda en un reembolso a la tarjeta cuando el cliente lo pidió."],
+    "3": ["Train a classifier on past tickets to choose the compensation type before the agent calls any tool.", "Entrenar un clasificador con tickets pasados que elija el tipo de compensación antes de que el agente llame a ninguna tool."]
+  },
+  "s1q25": {
+    "1": ["Quickly change the address first since it is simple, then offer to transfer to a human.", "Cambiar primero la dirección, ya que es sencillo, y luego ofrecer pasar con una persona."],
+    "2": ["Explain politely that the bot can resolve address changes faster than a human.", "Explicar con educación que el bot puede resolver los cambios de dirección más rápido que una persona."]
+  },
+  "s1q26": {
+    "1": ["Pick the account with the most recent order, since it is most likely the one contacting you.", "Elegir la cuenta con el pedido más reciente, ya que es la que con más probabilidad está escribiendo."],
+    "3": ["Show the customer the four accounts with partial details and let them choose theirs.", "Mostrar al cliente las cuatro cuentas con datos parciales y dejar que elija la suya."]
+  },
+  "s1q27": {
+    "1": ["Approve the price match, because the policy does not explicitly forbid competitor matching.", "Aprobar la igualación de precio, porque la política no prohíbe explícitamente igualar a la competencia."],
+    "2": ["Deny the request, because the policy only covers price drops on your own website.", "Rechazar la petición, porque la política solo cubre bajadas de precio en tu propia web."]
+  },
+  "s1q28": {
+    "1": ["Escalate to a human, because strongly negative sentiment signals a case the agent should not handle.", "Escalar a una persona, porque un sentimiento muy negativo indica un caso que el agente no debe manejar."],
+    "3": ["Offer a full refund instead of a replacement, since a third failure justifies going beyond the request.", "Ofrecer un reembolso completo en lugar de la reposición, ya que un tercer fallo justifica ir más allá de lo pedido."]
+  },
+  "s1q29": {
+    "1": ["Summarize less often, for example every 60 turns instead of every 20, so fewer details are lost.", "Resumir con menos frecuencia, por ejemplo cada 60 turnos en lugar de cada 20, para perder menos detalles."],
+    "3": ["Ask the customer to restate key details such as amounts and dates every 10 turns.", "Pedir al cliente que repita los datos clave, como importes y fechas, cada 10 turnos."]
+  },
+  "s1q30": {
+    "1": ["Call lookup_order less often and rely on what the customer says about the order.", "Llamar menos a lookup_order y fiarse de lo que dice el cliente sobre el pedido."],
+    "3": ["Summarize every tool result with an extra model call before adding it to the history.", "Resumir cada resultado de tool con una llamada extra al modelo antes de añadirlo al historial."]
+  },
+  "s1q31": {
+    "1": ["Include the full policy twice in the context so the exception on page 11 appears more often.", "Incluir la política completa dos veces en el contexto para que la excepción de la página 11 aparezca más."],
+    "2": ["Switch to a larger model with a longer context window that can attend to all 20 pages equally.", "Cambiar a un modelo más grande con una ventana de contexto mayor que atienda por igual las 20 páginas."]
+  },
+  "s1q32": {
+    "1": ["Reduce human QA across all case types, since 82% overall already beats the 80% target.", "Reducir el control humano en todos los tipos de caso, ya que el 82 % global ya supera la meta del 80 %."],
+    "3": ["Raise the agent's self-reported confidence threshold so it escalates more of the uncertain disputes.", "Subir el umbral de confianza autoinformada del agente para que escale más disputas inciertas."]
+  }
+}

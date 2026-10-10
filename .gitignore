@@ -1,0 +1,13 @@
+.DS_Store
+.netlify/
+node_modules/
+*.log
+__pycache__/
+
+# Notas locales de trabajo con el asistente
+CLAUDE.md
+.claude/
+
+# Material de referencia: la guía oficial es de Anthropic y las notas de investigación son internas
+docs/exam-guide-v1.0.txt
+docs/investigacion.md

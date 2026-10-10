@@ -1,0 +1,286 @@
+{
+ "L0": {
+  "1.1": [
+   "An option that uses a PreToolUse hook to enforce a financial business rule",
+   "Una opción que usa un hook PreToolUse para imponer una regla de negocio financiera"
+  ]
+ },
+ "Len": {
+  "1.2": [
+   "Results that were cached by the API and reused from an earlier call",
+   "Resultados que la API guardó en caché y reutilizó de una llamada anterior"
+  ]
+ },
+ "L1.2": {
+  "0.3": [
+   "Run the four agents in parallel instead of sequentially so simple questions return faster",
+   "Ejecutar los cuatro agentes en paralelo en vez de en secuencia para que las preguntas simples respondan antes"
+  ],
+  "1.3": [
+   "So the coordinator can share its full conversation history with every subagent automatically",
+   "Para que el coordinador comparta automáticamente todo su historial con cada subagente"
+  ]
+ },
+ "L1.3": {
+  "0.2": [
+   "The model needs extended thinking enabled before it is able to plan delegation",
+   "El modelo necesita tener activado el extended thinking para poder planificar la delegación"
+  ]
+ },
+ "L1.4": {
+  "0.1": [
+   "Rewrite the system prompt in capitals: ALWAYS VERIFY IDENTITY FIRST",
+   "Reescribir el system prompt en mayúsculas: VERIFICA SIEMPRE LA IDENTIDAD PRIMERO"
+  ],
+  "0.2": [
+   "Add ten few-shot examples that show verification before every refund",
+   "Añadir diez ejemplos few-shot que muestren la verificación antes de cada reembolso"
+  ],
+  "1.3": [
+   "Ask the customer to write a short summary of their issue that is forwarded to the human agent",
+   "Pedir al cliente que escriba un breve resumen de su problema que se reenvíe al agente humano"
+  ]
+ },
+ "L1.5": {
+  "0.1": [
+   "Instruct the model in the system prompt to convert every date carefully before comparing",
+   "Indicar al modelo en el system prompt que convierta con cuidado cada fecha antes de comparar"
+  ],
+  "1.3": [
+   "Have the model self-report its confidence before each refund and block low scores",
+   "Que el modelo informe su confianza antes de cada reembolso y bloquear las puntuaciones bajas"
+  ]
+ },
+ "L1.6": {
+  "0.3": [
+   "Run three full reviews and keep only the findings that most runs agree on",
+   "Hacer tres revisiones completas y quedarse solo con lo que coincida en la mayoría"
+  ],
+  "1.1": [
+   "A fixed chain: one test file per source file, in alphabetical order, until all are covered",
+   "Una cadena fija: un archivo de test por archivo fuente, en orden alfabético, hasta cubrirlos todos"
+  ]
+ },
+ "L1.7": {
+  "0.1": [
+   "Keep resuming the same session and ask it to be careful about outdated function names",
+   "Seguir reanudando la misma sesión y pedirle que tenga cuidado con los nombres de funciones obsoletos"
+  ],
+  "0.3": [
+   "Run /compact on the resumed session so it forgets the old tool results",
+   "Ejecutar /compact en la sesión reanudada para que olvide los resultados viejos de las tools"
+  ]
+ },
+ "L2.1": {
+  "0.1": [
+   "Add 5–8 few-shot examples to the system prompt showing order queries routed to lookup_order",
+   "Añadir 5–8 ejemplos few-shot al system prompt con consultas de pedidos enviadas a lookup_order"
+  ],
+  "1.3": [
+   "Whether the knowledge-base tool has more parameters, which makes the model prefer it",
+   "Si la tool de la base de conocimiento tiene más parámetros, lo que hace que el modelo la prefiera"
+  ]
+ },
+ "L2.2": {
+  "0.1": [
+   "Limit retries for process_refund to two attempts, then apologize and close",
+   "Limitar los reintentos de process_refund a dos intentos y luego disculparse y cerrar"
+  ],
+  "0.3": [
+   "Remove process_refund from the agent and route every refund request to a human",
+   "Quitar process_refund al agente y enviar toda petición de reembolso a una persona"
+  ]
+ },
+ "L2.3": {
+  "0.1": [
+   "Give the synthesis agent all web search tools so it never needs a round trip",
+   "Dar al agente de síntesis todas las tools de búsqueda web para que nunca necesite un viaje"
+  ]
+ },
+ "L2.4": {
+  "0.1": [
+   "Add it to each developer's ~/.claude.json with their own token",
+   "Añadirlo al ~/.claude.json de cada desarrollador con su propio token"
+  ],
+  "1.1": [
+   "Add more search tools so it finds pages faster",
+   "Añadir más tools de búsqueda para encontrar páginas más rápido"
+  ]
+ },
+ "L2.5": {
+  "1.1": [
+   "Retry Edit with the same snippet until it succeeds",
+   "Reintentar Edit con el mismo fragmento hasta que funcione"
+  ]
+ },
+ "L3.1": {
+  "0.1": [
+   "The new hires use a different model that ignores project memory files",
+   "Las personas nuevas usan otro modelo que ignora los archivos de memoria del proyecto"
+  ],
+  "1.2": [
+   "Put the relevant standards in each package developer's ~/.claude/CLAUDE.md",
+   "Poner los estándares relevantes en el ~/.claude/CLAUDE.md de cada desarrollador del paquete"
+  ]
+ },
+ "L3.3": {
+  "1.3": [
+   "They are shared automatically with other repositories that use the same rules",
+   "Se comparten automáticamente con otros repositorios que usan las mismas reglas"
+  ]
+ },
+ "L3.4": {
+  "0.3": [
+   "Direct execution; switch to plan mode only if it gets hard",
+   "Ejecución directa; cambiar a plan mode solo si se complica"
+  ]
+ },
+ "L3.5": {
+  "1.3": [
+   "Put \"be careful with caching and invalidation\" in CLAUDE.md",
+   "Poner «ten cuidado con la caché y la invalidación» en CLAUDE.md"
+  ]
+ },
+ "L3.6": {
+  "0.1": [
+   "Set CLAUDE_HEADLESS=true in the job environment",
+   "Definir CLAUDE_HEADLESS=true en el entorno del job"
+  ],
+  "0.2": [
+   "Redirect stdin from /dev/null so it cannot wait",
+   "Redirigir stdin desde /dev/null para que no pueda esperar"
+  ],
+  "1.1": [
+   "Run the review only on the first commit of each PR",
+   "Ejecutar la revisión solo en el primer commit de cada PR"
+  ],
+  "1.3": [
+   "Review with the same session that wrote the code, since it already knows the changes",
+   "Revisar con la misma sesión que escribió el código, ya que conoce los cambios"
+  ]
+ },
+ "L4.1": {
+  "0.2": [
+   "Only show findings whose self-reported model confidence is above 0.9, hiding everything else",
+   "Mostrar solo los hallazgos cuya confianza autoinformada supere 0,9, ocultando todo lo demás"
+  ],
+  "0.1": [
+   "Add \"be conservative and only report issues you are sure about\" to the review prompt",
+   "Añadir «sé conservador y reporta solo lo que tengas seguro» al prompt de revisión"
+  ],
+  "1.3": [
+   "Run three reviews per PR and average their severity labels",
+   "Hacer tres revisiones por PR y promediar sus etiquetas de severidad"
+  ]
+ },
+ "L4.2": {
+  "0.3": [
+   "Instruct the extractor to \"look carefully for methodology anywhere in the paper\"",
+   "Indicar al extractor que «busque con cuidado la metodología en cualquier parte del paper»"
+  ],
+  "1.3": [
+   "It shows only the final label, without context, to keep prompts short",
+   "Muestra solo la etiqueta final, sin contexto, para que el prompt sea corto"
+  ]
+ },
+ "L4.3": {
+  "0.1": [
+   "Keep the field required and add \"do not invent dates\" to the prompt",
+   "Mantener el campo obligatorio y añadir «no inventes fechas» al prompt"
+  ],
+  "1.2": [
+   "The schema is missing required fields for each line item",
+   "Al schema le faltan campos obligatorios en cada línea"
+  ]
+ },
+ "L4.4": {
+  "0.1": [
+   "Retry with the validation error appended so the model searches harder for the number",
+   "Reintentar añadiendo el error de validación para que el modelo busque mejor el número"
+  ],
+  "1.2": [
+   "Only the list of validation errors, to keep the retry prompt short",
+   "Solo la lista de errores de validación, para que el prompt de reintento sea corto"
+  ]
+ },
+ "L4.5": {
+  "1.3": [
+   "Switch all 5,000 requests to synchronous calls instead",
+   "Pasar las 5.000 peticiones a llamadas síncronas"
+  ]
+ },
+ "L4.6": {
+  "0.1": [
+   "Tell the same session to be much more critical when reviewing its code",
+   "Pedir a la misma sesión que sea mucho más crítica al revisar su código"
+  ],
+  "1.1": [
+   "As the only filter that decides which findings get reported",
+   "Como único filtro que decide qué hallazgos se reportan"
+  ]
+ },
+ "L5.1": {
+  "0.3": [
+   "Ask the customer to repeat the amount and order number before any refund",
+   "Pedir al cliente que repita el importe y el número de pedido antes de reembolsar"
+  ],
+  "0.1": [
+   "Summarize the history more often so it always stays short and current",
+   "Resumir el historial más a menudo para que siempre sea corto y esté al día"
+  ],
+  "1.1": [
+   "Shuffle the report order on each run so no report is always in the middle",
+   "Barajar el orden de los informes en cada ejecución para que ninguno quede siempre en medio"
+  ]
+ },
+ "L5.2": {
+  "1.1": [
+   "Pick the most recently active account, since it is most likely the caller",
+   "Elegir la cuenta con actividad más reciente, ya que es la que más probablemente llama"
+  ]
+ },
+ "L5.3": {
+  "0.2": [
+   "Return an empty result set marked as successful so the run continues",
+   "Devolver un conjunto vacío marcado como exitoso para que la ejecución continúe"
+  ],
+  "1.1": [
+   "Omit any mention of the missing sources to keep the report clean",
+   "No mencionar las fuentes que faltan para que el informe quede limpio"
+  ]
+ },
+ "L5.4": {
+  "0.2": [
+   "Ask it to re-read the entire codebase to refresh its memory",
+   "Pedirle que vuelva a leer todo el codebase para refrescar su memoria"
+  ],
+  "1.2": [
+   "Resume only the coordinator and let the agents reconstruct their own progress",
+   "Reanudar solo el coordinador y dejar que los agentes reconstruyan su propio progreso"
+  ]
+ },
+ "L5.5": {
+  "1.3": [
+   "Ask the model to double-check its confident answers in a second pass",
+   "Pedir al modelo que vuelva a comprobar sus respuestas seguras en una segunda pasada"
+  ],
+  "0.1": [
+   "Stop human review for all documents, since 97% overall is above the target",
+   "Dejar la revisión humana en todos los documentos, ya que el 97 % global supera la meta"
+  ]
+ },
+ "L5.6": {
+  "0.1": [
+   "Average the two values and cite both sources",
+   "Promediar los dos valores y citar ambas fuentes"
+  ],
+  "0.2": [
+   "Keep the higher value, from the larger study",
+   "Quedarse con el valor más alto, del estudio mayor"
+  ],
+  "1.1": [
+   "The search agent uses too few queries to find citable sources",
+   "El agente de búsqueda hace muy pocas consultas para encontrar fuentes citables"
+  ]
+ }
+}

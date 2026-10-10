@@ -1,0 +1,110 @@
+{
+  "s2q33": { "1": ["Generate one test file per source file in alphabetical order, moving to the next file only when the current one compiles.", "Generar un archivo de test por archivo fuente en orden alfabético, pasando al siguiente solo cuando el actual compile."] },
+
+  "s3q02": {
+    "1": ["The synthesis model is too small to keep 20 findings and their sources in mind at once.", "El modelo de síntesis es demasiado pequeño para tener en cuenta 20 hallazgos y sus fuentes a la vez."],
+    "3": ["The search agent should have written the synthesis itself, since it already holds the sources.", "El agente de búsqueda debería haber escrito él mismo la síntesis, ya que tiene las fuentes."]
+  },
+  "s3q03": {
+    "1": ["The AgentDefinitions lack a model and temperature setting for each subagent.", "A los AgentDefinitions les falta indicar modelo y temperatura para cada subagente."]
+  },
+  "s3q04": {
+    "1": ["Merge both subagents into a single agent that searches and analyzes in one pass.", "Fusionar ambos subagentes en un único agente que busque y analice en una pasada."],
+    "3": ["Have the search agent call the analysis agent as soon as it finds each source.", "Hacer que el agente de búsqueda llame al de análisis en cuanto encuentre cada fuente."]
+  },
+  "s3q05": {
+    "1": ["Each subagent's temperature, so the coordinator's choices become more deterministic.", "La temperatura de cada subagente, para que las elecciones del coordinador sean más deterministas."],
+    "2": ["Give both subagents the same web and document tools so either one can handle any question.", "Dar a ambos subagentes las mismas tools web y de documentos para que cualquiera pueda atender cualquier pregunta."]
+  },
+  "s3q06": {
+    "1": ["As one long prose summary written by the analysis agent, with the sources mentioned in the text.", "Como un único resumen largo en prosa escrito por el agente de análisis, con las fuentes mencionadas en el texto."],
+    "3": ["Through a shared memory store that both agents read and write automatically between invocations.", "Mediante un almacén de memoria compartida que ambos agentes leen y escriben automáticamente entre invocaciones."]
+  },
+  "s3q07": {
+    "1": ["Add more numbered steps that cover each edge case, such as missing source types.", "Añadir más pasos numerados que cubran cada caso límite, como los tipos de fuente que faltan."],
+    "3": ["Replace the prompts with a decision tree in code that picks the next step for each subagent.", "Sustituir los prompts por un árbol de decisión en código que elija el siguiente paso de cada subagente."]
+  },
+  "s3q08": {
+    "1": ["Always run the full pipeline, so that answer quality stays consistent across all queries.", "Ejecutar siempre el pipeline completo, para que la calidad de las respuestas sea igual en todas las consultas."],
+    "2": ["Let each subagent decide on its own whether to skip itself for simple questions.", "Dejar que cada subagente decida por su cuenta si se salta las preguntas simples."]
+  },
+  "s3q09": {
+    "2": ["Let them overlap and remove the duplicate articles only in the final report.", "Dejar que se solapen y quitar los artículos duplicados solo en el informe final."],
+    "3": ["Raise each subagent's temperature so their searches naturally diverge.", "Subir la temperatura de cada subagente para que sus búsquedas diverjan de forma natural."]
+  },
+  "s3q10": {
+    "1": ["Ask the synthesis agent to write longer, more detailed reports so that every subtopic gets more space and depth.", "Pedir al agente de síntesis informes más largos y detallados para que cada subtema tenga más espacio y profundidad."],
+    "2": ["Run the whole research pipeline three times in parallel and merge the three reports into a single final version.", "Ejecutar todo el pipeline de investigación tres veces en paralelo y fusionar los tres informes en una versión final."]
+  },
+  "s3q11": {
+    "2": ["Direct calls between subagents are always slower than going through the coordinator.", "Las llamadas directas entre subagentes siempre son más lentas que pasar por el coordinador."],
+    "3": ["The Agent SDK forbids subagents from invoking other subagents, so it would simply fail at runtime.", "El Agent SDK prohíbe que un subagente invoque a otro, así que simplemente fallaría al ejecutarse."]
+  },
+  "s3q13": {
+    "1": ["Resume the scan session twice in a row, once per framing.", "Reanudar la sesión de revisión dos veces seguidas, una por enfoque."],
+    "2": ["Two fresh sessions, each redoing the literature scan for its framing.", "Dos sesiones nuevas, cada una rehaciendo la revisión para su enfoque."]
+  },
+  "s3q14": {
+    "1": ["A fixed prompt chain designed before research starts, so every topic follows the same steps.", "Una cadena de prompts fija diseñada antes de empezar, para que todos los temas sigan los mismos pasos."]
+  },
+  "s3q15": {
+    "1": ["Instruct the synthesis agent to detect and convert each date format carefully.", "Indicar al agente de síntesis que detecte y convierta con cuidado cada formato de fecha."],
+    "2": ["Drop any source whose date is not already in ISO 8601 format.", "Descartar cualquier fuente cuya fecha no esté ya en formato ISO 8601."]
+  },
+  "s3q16": {
+    "1": ["In the search subagent's system prompt, listing every blocked domain.", "En el system prompt del subagente de búsqueda, con la lista de dominios bloqueados."],
+    "3": ["In a weekly audit report that flags any fetch from a blocked domain.", "En un informe de auditoría semanal que señale cualquier descarga de un dominio bloqueado."]
+  },
+  "s3q17": {
+    "1": ["The marker string is too common; use a longer, unique token such as \"<<<REPORT_COMPLETE_7F3>>>\" instead.", "La cadena de marca es demasiado común; usa un token más largo y único, como «<<<REPORT_COMPLETE_7F3>>>»."],
+    "2": ["The loop needs a hard cap of 5 iterations so it cannot stop early or run forever.", "El bucle necesita un tope fijo de 5 iteraciones para que no pare antes de tiempo ni se ejecute para siempre."]
+  },
+  "s3q20": {
+    "2": ["Keep both tools as they are and add few-shot examples showing which one to use for web pages.", "Mantener ambas tools como están y añadir ejemplos few-shot que muestren cuál usar con páginas web."],
+    "3": ["Route requests by URL pattern in a pre-processing script before the agent chooses a tool.", "Enrutar las peticiones por patrón de URL en un script de preprocesado antes de que el agente elija tool."]
+  },
+  "s3q21": {
+    "1": ["Add a free-text \"mode\" parameter to analyze_document (e.g., \"stats\", \"summary\", \"verify\") and describe each mode.", "Añadir a analyze_document un parámetro «mode» de texto libre (p. ej. «stats», «summary», «verify») y describir cada modo."],
+    "3": ["Keep the generic tool and post-process its outputs with regular expressions into separate result types.", "Mantener la tool genérica y posprocesar sus salidas con expresiones regulares en tipos de resultado separados."]
+  },
+  "s3q22": {
+    "2": ["Give it even more tools so it can finish its job.", "Darle aún más tools para que pueda terminar su trabajo."]
+  },
+  "s3q23": {
+    "1": ["Keep fetch_url and add a warning in its description to avoid ads and unrelated pages.", "Mantener fetch_url y añadir un aviso en su descripción para evitar anuncios y páginas ajenas."]
+  },
+  "s3q24": {
+    "1": ["Abort the whole research run immediately and report the outage, since partial results could be misleading.", "Abortar de inmediato toda la investigación y reportar la caída, ya que los resultados parciales podrían confundir."],
+    "2": ["Return an empty result set marked as successful so the coordinator can continue with the other subtopics.", "Devolver un conjunto vacío marcado como exitoso para que el coordinador continúe con los demás subtemas."]
+  },
+  "s3q25": {
+    "1": ["Report both as errors so the coordinator can decide whether to retry either search.", "Reportar ambos como errores para que el coordinador decida si reintentar cualquiera de las búsquedas."],
+    "2": ["Report both as successful empty results, since neither search produced any usable sources.", "Reportar ambos como resultados vacíos exitosos, ya que ninguna búsqueda produjo fuentes útiles."]
+  },
+  "s3q27": {
+    "1": ["Build custom MCP servers for both from scratch so you fully control their tools and outputs.", "Construir desde cero servidores MCP propios para ambos y controlar del todo sus tools y salidas."]
+  },
+  "s3q30": {
+    "1": ["Omit any mention of the missing sources so the report reads as complete and authoritative to the reader.", "No mencionar las fuentes que faltan para que el informe se lea completo y con autoridad."],
+    "3": ["Fill the gaps with the model's general knowledge so every section of the report has comparable depth.", "Rellenar los huecos con el conocimiento general del modelo para que todas las secciones tengan una profundidad similar."]
+  },
+  "s3q31": {
+    "1": ["Average the two values to 34% and cite both sources as the basis for the combined figure.", "Promediar los dos valores en un 34 % y citar ambas fuentes como base de la cifra combinada."],
+    "2": ["Keep only the most recent of the two figures, since newer data usually supersedes older data.", "Quedarse solo con la más reciente de las dos cifras, ya que los datos nuevos suelen sustituir a los viejos."]
+  },
+  "s3q32": {
+    "1": ["Only accept sources published in the current year, so all figures are directly comparable.", "Aceptar solo fuentes publicadas este año, para que todas las cifras sean comparables."],
+    "2": ["Instruct the synthesis agent to ignore apparent contradictions between sources.", "Indicar al agente de síntesis que ignore las contradicciones aparentes entre fuentes."]
+  },
+  "s3q33": {
+    "1": ["Ask the synthesis agent to add the missing citations from memory when writing each section.", "Pedir al agente de síntesis que añada de memoria las citas que faltan al escribir cada sección."]
+  },
+  "s3q34": {
+    "1": ["Even more detail and longer excerpts, so synthesis never misses context.", "Aún más detalle y extractos más largos, para que a la síntesis nunca le falte contexto."],
+    "2": ["A one-sentence summary per source, to fit the budget.", "Un resumen de una frase por fuente, para que quepa en el presupuesto."]
+  },
+  "s3q35": {
+    "1": ["Use flowing prose for everything so the report reads as one consistent narrative from start to finish.", "Usar prosa continua para todo, para que el informe se lea como una narrativa coherente de principio a fin."],
+    "2": ["Use tables for every section, since tables are the most compact way to present any kind of finding.", "Usar tablas en todas las secciones, ya que son la forma más compacta de presentar cualquier hallazgo."]
+  }
+}

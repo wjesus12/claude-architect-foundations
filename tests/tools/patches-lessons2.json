@@ -1,0 +1,28 @@
+{
+  "L2.1": { "1.3": ["Whether the knowledge-base tool exposes more parameters than lookup_order, which makes the model prefer it", "Si la tool de la base de conocimiento expone más parámetros que lookup_order, lo que hace que el modelo la prefiera"] },
+  "L2.2": {
+    "0.3": ["Remove process_refund from the agent entirely and route every refund request to a human agent", "Quitar process_refund al agente por completo y enviar toda petición de reembolso a un agente humano"],
+    "1.3": ["By throwing an exception that ends the session and logs the empty lookup", "Lanzando una excepción que termine la sesión y registre la consulta vacía"]
+  },
+  "L2.3": { "0.1": ["Give the synthesis agent all of the web search tools so it never needs a round trip through the coordinator", "Dar al agente de síntesis todas las tools de búsqueda web para que nunca necesite pasar por el coordinador"] },
+  "L3.1": { "0.1": ["The new hires use a different model version that ignores project-level memory files", "Las personas nuevas usan otra versión del modelo que ignora los archivos de memoria del proyecto"] },
+  "L3.4": { "0.3": ["Direct execution for now; switch to plan mode only if the work turns out to be hard", "Ejecución directa por ahora; cambiar a plan mode solo si el trabajo resulta difícil"] },
+  "L3.6": { "0.3": ["Add the --batch flag to the command", "Añadir el flag --batch al comando"], "0.1": ["Set CLAUDE_HEADLESS=true in the CI job environment", "Definir CLAUDE_HEADLESS=true en el entorno del job de CI"] },
+  "L4.1": {
+    "0.2": ["Only show findings whose self-reported model confidence is above 0.9, and hide every other finding from developers", "Mostrar solo los hallazgos con confianza autoinformada superior a 0,9 y ocultar todos los demás a los desarrolladores"],
+    "1.3": ["Run three reviews per PR and average their severity labels into one", "Hacer tres revisiones por PR y promediar sus etiquetas de severidad en una"]
+  },
+  "L4.4": { "1.2": ["Only the list of specific validation errors, to keep the retry prompt short", "Solo la lista de errores de validación concretos, para que el prompt de reintento sea corto"] },
+  "L4.6": { "0.1": ["Tell the same session to be much more critical and skeptical when reviewing its own code", "Pedir a la misma sesión que sea mucho más crítica y escéptica al revisar su propio código"] },
+  "L5.1": {
+    "0.3": ["Ask the customer to repeat the amount and order number before any refund is issued", "Pedir al cliente que repita el importe y el número de pedido antes de emitir cualquier reembolso"],
+    "1.1": ["Shuffle the report order on each run so that no report is always stuck in the middle", "Barajar el orden de los informes en cada ejecución para que ninguno quede siempre atascado en medio"]
+  },
+  "L5.3": { "0.2": ["Return an empty result set marked as successful so the rest of the research run continues", "Devolver un conjunto vacío marcado como exitoso para que continúe el resto de la investigación"] },
+  "L5.4": { "0.2": ["Ask it to re-read the entire codebase from the start to refresh its memory", "Pedirle que vuelva a leer todo el codebase desde el principio para refrescar su memoria"] },
+  "L5.5": { "0.3": ["Review only the documents the model marks as low confidence, without any calibration step", "Revisar solo los documentos que el modelo marca como de baja confianza, sin ningún paso de calibración"] },
+  "L5.6": {
+    "0.1": ["Average the two values and cite both sources for the result", "Promediar los dos valores y citar ambas fuentes del resultado"],
+    "1.1": ["The search agent runs too few queries to find enough citable sources", "El agente de búsqueda hace muy pocas consultas para encontrar suficientes fuentes citables"]
+  }
+}

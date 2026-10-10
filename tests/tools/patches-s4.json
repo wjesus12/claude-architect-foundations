@@ -1,0 +1,104 @@
+{
+  "s3q06": { "1": ["As one long prose summary written by the analysis agent, mentioning each source inline next to the claims it supports.", "Como un único resumen largo en prosa escrito por el agente de análisis, mencionando cada fuente junto a las afirmaciones que respalda."] },
+  "s3q10": { "2": ["Run the whole research pipeline three times in parallel and merge the three reports into a single, more comprehensive final version.", "Ejecutar todo el pipeline de investigación tres veces en paralelo y fusionar los tres informes en una versión final más completa."] },
+  "s3q17": { "1": ["The marker string is too common and appears in drafts; switch to a longer, unique token such as \"<<<REPORT_COMPLETE_7F3>>>\".", "La cadena de marca es demasiado común y aparece en borradores; cámbiala por un token más largo y único, como «<<<REPORT_COMPLETE_7F3>>>»."] },
+  "s3q20": { "2": ["Keep both tools exactly as they are and add several few-shot examples that show which one to use for scraped web pages.", "Mantener ambas tools tal cual y añadir varios ejemplos few-shot que muestren cuál usar con páginas web descargadas."] },
+  "s3q21": { "1": ["Add a free-text \"mode\" parameter to analyze_document (for example \"stats\", \"summary\" or \"verify\") and document what each mode returns.", "Añadir a analyze_document un parámetro «mode» de texto libre (por ejemplo «stats», «summary» o «verify») y documentar qué devuelve cada modo."] },
+  "s3q24": { "1": ["Abort the whole research run immediately and report the outage to the user, since partial results could mislead the final synthesis.", "Abortar de inmediato toda la investigación y comunicar la caída al usuario, ya que los resultados parciales podrían confundir a la síntesis final."] },
+  "s3q30": { "1": ["Omit any mention of the missing sources so the report reads as complete and authoritative, and note the gaps only in internal logs.", "No mencionar las fuentes que faltan para que el informe se lea completo y con autoridad, y anotar los huecos solo en logs internos."] },
+  "s3q35": { "1": ["Use flowing prose for everything so the report reads as one consistent narrative, describing the figures in words.", "Usar prosa continua para todo, para que el informe se lea como una narrativa coherente, describiendo las cifras con palabras."] },
+
+  "s4q02": { "1": ["Grep for \"int.test\" in all files", "Grep de «int.test» en todos los archivos"] },
+  "s4q03": { "1": ["Retry the same Edit call with exponential backoff.", "Reintentar la misma llamada a Edit con espera exponencial."] },
+  "s4q04": {
+    "1": ["Keep reading every file, but skip comments and blank lines so more of the repository fits in context.", "Seguir leyendo todos los archivos, pero saltando comentarios y líneas en blanco para que quepa más del repositorio."],
+    "3": ["Ask the user to explain how checkout works first, then confirm it by reading the files they mention.", "Pedir al usuario que explique primero cómo funciona el checkout y confirmarlo leyendo los archivos que mencione."]
+  },
+  "s4q05": {
+    "1": ["Glob for every file whose name starts with payments* and read each of them in turn.", "Glob de todos los archivos cuyo nombre empieza por payments* y leerlos uno a uno."],
+    "3": ["Grep for the original internal name \"charge\" across the codebase, since the aliases point to it.", "Grep del nombre interno original «charge» en todo el codebase, ya que los alias apuntan a él."]
+  },
+  "s4q06": {
+    "1": ["Remove Grep from the agent's tool list so it has no choice but to use the MCP code-search server.", "Quitar Grep de la lista de tools del agente para que no le quede otra que usar el servidor MCP de búsqueda."],
+    "2": ["Force tool_choice to the MCP search tool on every turn so the agent always uses symbol-aware search first.", "Forzar tool_choice a la tool MCP de búsqueda en cada turno para que el agente siempre use primero la búsqueda por símbolos."]
+  },
+  "s4q07": {
+    "1": ["Only the first server listed in the configuration is active; the second is used as a fallback.", "Solo está activo el primer servidor de la configuración; el segundo se usa como respaldo."],
+    "2": ["The agent loads one server at a time and must restart its session to switch to the other.", "El agente carga un servidor cada vez y debe reiniciar la sesión para cambiar al otro."]
+  },
+  "s4q08": { "1": ["In the project .mcp.json, marked as optional.", "En el .mcp.json del proyecto, marcado como opcional."] },
+  "s4q11": {
+    "1": ["Merge them into a single search_all tool that queries both the code and the wiki.", "Fusionarlas en una única tool search_all que consulte a la vez el código y la wiki."],
+    "2": ["Add a keyword router that sends questions mentioning functions or classes to search_code.", "Añadir un router por palabras clave que envíe a search_code las preguntas que mencionen funciones o clases."]
+  },
+  "s4q12": {
+    "1": ["query_logs needs more parameters, such as a time range, to be competitive with Bash.", "query_logs necesita más parámetros, como un rango de tiempo, para competir con Bash."],
+    "3": ["The MCP server is probably disconnected, so the agent falls back to the terminal.", "Probablemente el servidor MCP está desconectado, así que el agente recurre a la terminal."]
+  },
+  "s4q13": {
+    "1": ["A transient error marked retryable, since access problems are often temporary token or network issues.", "Un error transitorio marcado como reintentable, ya que los problemas de acceso suelen ser fallos temporales de token o red."],
+    "2": ["An empty successful result, so the agent simply reports that the repository has no matching content.", "Un resultado vacío exitoso, para que el agente diga simplemente que el repositorio no tiene contenido coincidente."]
+  },
+  "s4q14": {
+    "1": ["Rename all 25 tools with category prefixes (git_, ci_, db_) so the agent can group them.", "Renombrar las 25 tools con prefijos de categoría (git_, ci_, db_) para que el agente pueda agruparlas."],
+    "3": ["Add more examples to the system prompt showing the right tool for each type of request.", "Añadir más ejemplos al system prompt que muestren la tool correcta para cada tipo de petición."]
+  },
+  "s4q15": {
+    "1": ["Put \"always call analyze_repo_manifest before anything else\" at the top of the system prompt.", "Poner «llama siempre a analyze_repo_manifest antes que nada» al principio del system prompt."]
+  },
+  "s4q16": {
+    "1": ["Run both searches in the main agent, one after the other, and summarize the results at the end.", "Hacer ambas búsquedas en el agente principal, una tras otra, y resumir los resultados al final."],
+    "2": ["Spawn subagents and rely on them inheriting the main agent's history, so no context needs to be passed.", "Lanzar subagentes y confiar en que hereden el historial del agente principal, sin pasar contexto."]
+  },
+  "s4q17": {
+    "1": ["Analyze all six microservices inside a single subagent to avoid spawn overhead.", "Analizar los seis microservicios dentro de un único subagente para evitar el coste de crearlos."],
+    "2": ["Send the six analyses to the Message Batches API and collect the results.", "Enviar los seis análisis a la Message Batches API y recoger los resultados."]
+  },
+  "s4q19": {
+    "1": ["A clear rule in the system prompt listing the forbidden commands.", "Una regla clara en el system prompt con la lista de comandos prohibidos."],
+    "2": ["A PostToolUse hook that logs and alerts on any dangerous command.", "Un hook PostToolUse que registre y avise de cualquier comando peligroso."]
+  },
+  "s4q20": {
+    "1": ["Ask the agent in the system prompt to always present linter findings in one consistent format.", "Pedir al agente en el system prompt que presente siempre los hallazgos de los linters en un formato único."],
+    "2": ["Keep only the linter whose output format the agent handles best and drop the other two.", "Quedarse solo con el linter cuyo formato maneja mejor el agente y quitar los otros dos."]
+  },
+  "s4q21": { "1": ["A fully adaptive investigation that re-plans the work for each service.", "Una investigación totalmente adaptativa que vuelva a planificar el trabajo en cada servicio."] },
+  "s4q22": {
+    "1": ["A fixed diagnostic checklist executed in the same order every time.", "Una checklist de diagnóstico fija ejecutada siempre en el mismo orden."],
+    "3": ["Read all the source files upfront, then explain the root cause.", "Leer todos los archivos fuente de entrada y luego explicar la causa raíz."]
+  },
+  "s4q24": { "1": ["Resume the analysis session and try both strategies in sequence.", "Reanudar la sesión de análisis y probar ambas estrategias una tras otra."] },
+  "s4q25": {
+    "1": ["Stronger wording in the system prompt, stating that committing before green tests is never allowed.", "Una redacción más firme en el system prompt, indicando que nunca se permite hacer commit sin tests en verde."],
+    "2": ["Few-shot examples that always show the agent running the full test suite before calling create_commit.", "Ejemplos few-shot que siempre muestren al agente ejecutando toda la suite antes de llamar a create_commit."]
+  },
+  "s4q26": {
+    "1": ["Let the two subagents share a memory store so the docs agent can read the analysis directly.", "Dejar que los dos subagentes compartan un almacén de memoria para que el de documentación lea el análisis directamente."],
+    "2": ["Give the documentation subagent all the code-analysis tools so it can analyze endpoints itself.", "Dar al subagente de documentación todas las tools de análisis de código para que analice él mismo los endpoints."]
+  },
+  "s4q28": { "1": ["A backend section in ~/.claude/CLAUDE.md", "Una sección de backend en ~/.claude/CLAUDE.md"] },
+  "s4q30": {
+    "1": ["\"Do not modify any files\" written at the top of the skill body.", "«No modifiques ningún archivo» escrito al principio del cuerpo de la skill."],
+    "3": ["Move the skill to ~/.claude/skills so it runs with fewer permissions.", "Mover la skill a ~/.claude/skills para que se ejecute con menos permisos."]
+  },
+  "s4q31": {
+    "1": ["A reusable instruction block in ~/.claude/CLAUDE.md on each machine.", "Un bloque de instrucciones reutilizable en ~/.claude/CLAUDE.md de cada máquina."],
+    "3": ["A .claude/rules file with paths: [\"**/openapi*.yaml\"]", "Un archivo en .claude/rules con paths: [\"**/openapi*.yaml\"]"]
+  },
+  "s4q32": {
+    "1": ["Start editing the first file directly and let the right migration order emerge from the work.", "Empezar a editar directamente el primer archivo y dejar que el orden correcto surja del propio trabajo."],
+    "2": ["Ask Claude to convert all 70 files in one response so the style stays consistent.", "Pedir a Claude que convierta los 70 archivos en una respuesta para mantener un estilo consistente."]
+  },
+  "s4q33": {
+    "2": ["A model with a larger context window for this task.", "Un modelo con una ventana de contexto mayor para esta tarea."],
+    "3": ["Temporarily disabling CLAUDE.md to free space.", "Desactivar CLAUDE.md temporalmente para liberar espacio."]
+  },
+  "s4q34": {
+    "1": ["A CLAUDE.md file inside each of the migrations folders.", "Un archivo CLAUDE.md dentro de cada carpeta de migraciones."],
+    "2": ["A /migration skill that developers invoke before generating files.", "Una skill /migration que los desarrolladores invocan antes de generar archivos."]
+  },
+  "s4q35": {
+    "1": ["Describe the edge cases more emphatically and in more detail in the prompt each time.", "Describir los casos límite con más énfasis y más detalle en el prompt cada vez."],
+    "2": ["Regenerate the output several times and keep the version that looks most correct.", "Regenerar la salida varias veces y quedarse con la versión que parezca más correcta."]
+  }
+}

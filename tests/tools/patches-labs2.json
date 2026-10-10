@@ -1,0 +1,8 @@
+{
+  "lab08": { "2": ["Cap retries at 2 in the agent loop so that policy errors stop looping after the second failed attempt", "Limitar los reintentos a 2 en el bucle del agente para que los errores de política paren tras el segundo intento fallido"] },
+  "lab19": { "1": ["Add \"never invent renewal dates\" to the prompt and keep the schema exactly as it is", "Añadir «nunca inventes fechas de renovación» al prompt y mantener el schema exactamente igual"] },
+  "lab21": { "2": ["Keep the batch and add a timeout that falls back to a synchronous call if results take over 10 minutes", "Mantener el batch y añadir un timeout que pase a una llamada síncrona si los resultados tardan más de 10 minutos"] },
+  "lab22": { "1": ["Add \"be even more conservative and only report issues you are highly confident are real, impactful problems in this diff\" to the prompt", "Añadir al prompt «sé aún más conservador y reporta solo lo que estés muy seguro de que es un problema real e importante en este diff»"] },
+  "lab23": { "1": ["Summarize more aggressively, keeping only the last 3 turns verbatim and compressing everything else, to save tokens", "Resumir de forma más agresiva, conservando literalmente solo los últimos 3 turnos y comprimiendo el resto, para ahorrar tokens"] },
+  "lab25": { "2": ["Train a classifier on historical tickets that predicts which conversations need escalation before the agent starts", "Entrenar con tickets históricos un clasificador que prediga qué conversaciones necesitan escalado antes de que empiece el agente"] }
+}

@@ -1,0 +1,125 @@
+{
+  "s3q10": { "2": ["Run the whole research pipeline three times in parallel with different seeds and merge the three reports into a single, more comprehensive final version.", "Ejecutar todo el pipeline de investigación tres veces en paralelo con semillas distintas y fusionar los tres informes en una versión final más completa."] },
+  "s4q06": { "2": ["Force tool_choice to the MCP search tool on every single turn so the agent always runs symbol-aware search before any text search.", "Forzar tool_choice a la tool MCP de búsqueda en cada turno para que el agente siempre haga una búsqueda por símbolos antes de cualquier búsqueda de texto."] },
+  "s4q13": { "1": ["A transient error marked retryable, since access problems are often temporary token or network issues that resolve on their own.", "Un error transitorio marcado como reintentable, ya que los problemas de acceso suelen ser fallos temporales de token o red que se resuelven solos."] },
+  "s4q16": { "2": ["Spawn subagents for both questions and rely on them inheriting the main agent's history, so no extra context needs to be passed.", "Lanzar subagentes para ambas preguntas y confiar en que hereden el historial del agente principal, sin pasar contexto adicional."] },
+  "s4q35": { "1": ["Describe the edge cases more emphatically and in more detail in the prompt on every attempt until they stop failing.", "Describir los casos límite con más énfasis y detalle en el prompt en cada intento hasta que dejen de fallar."] },
+
+  "s5q02": {
+    "1": ["--verbose, so every finding is printed with its file, line and severity details.", "--verbose, para que cada hallazgo se imprima con su archivo, línea y severidad."],
+    "3": ["A longer prompt describing the exact text format each finding must follow.", "Un prompt más largo que describa el formato de texto exacto de cada hallazgo."]
+  },
+  "s5q03": {
+    "1": ["By copying each developer's ~/.claude/CLAUDE.md into the CI runner's home directory.", "Copiando el ~/.claude/CLAUDE.md de cada desarrollador al directorio personal del runner de CI."]
+  },
+  "s5q04": {
+    "1": ["Reviews need a higher max_tokens than generation; raise it so the session can be more critical.", "Las revisiones necesitan un max_tokens mayor que la generación; súbelo para que la sesión sea más crítica."],
+    "2": ["It should run the review twice in the same session, the second time with extended thinking enabled.", "Debería revisar dos veces en la misma sesión, la segunda con extended thinking activado."]
+  },
+  "s5q05": {
+    "1": ["Delete all of the bot's previous comments before each run, so only the latest review is visible.", "Borrar todos los comentarios anteriores del bot antes de cada ejecución, para que solo se vea la última revisión."],
+    "2": ["Run the review only on the first commit of each PR, when the full change is still easy to analyze.", "Revisar solo el primer commit de cada PR, cuando el cambio completo aún es fácil de analizar."]
+  },
+  "s5q06": {
+    "1": ["A rule saying \"never duplicate existing tests\".", "Una regla que diga «nunca dupliques tests existentes»."],
+    "2": ["The full git history of the test directory.", "Todo el historial de git del directorio de tests."]
+  },
+  "s5q07": {
+    "1": ["Ask CI to generate fewer tests per run, for example at most five per changed file.", "Pedir a CI menos tests por ejecución, por ejemplo cinco como máximo por archivo cambiado."],
+    "2": ["Add a cleanup step that deletes generated tests that look trivial after each run.", "Añadir un paso de limpieza que borre los tests generados que parezcan triviales tras cada ejecución."]
+  },
+  "s5q08": {
+    "3": ["An environment variable holding the prompt, read by CI and local scripts.", "Una variable de entorno con el prompt, leída por CI y por los scripts locales."]
+  },
+  "s5q09": {
+    "1": ["A \"Testing\" section with the conventions in the root CLAUDE.md.", "Una sección «Testing» con las convenciones en el CLAUDE.md raíz."]
+  },
+  "s5q11": {
+    "1": ["CI uses a different default model that follows conventions less strictly.", "CI usa otro modelo por defecto que sigue las convenciones con menos rigor."],
+    "2": ["The -p flag disables memory files, so no CLAUDE.md is loaded in CI at all.", "El flag -p desactiva los archivos de memoria, así que en CI no se carga ningún CLAUDE.md."]
+  },
+  "s5q12": {
+    "2": ["Mark the failing tests as skipped so the pipeline can proceed while a human investigates.", "Marcar como omitidos los tests que fallan para que el pipeline siga mientras una persona investiga."]
+  },
+  "s5q15": {
+    "2": ["Have the model self-report a confidence score per finding and post only findings scored above 0.9.", "Hacer que el modelo informe una confianza por hallazgo y publicar solo los que superen 0,9."],
+    "3": ["Cap the bot at three comments per PR so only the most important findings get through.", "Limitar el bot a tres comentarios por PR para que solo pasen los hallazgos más importantes."]
+  },
+  "s5q16": {
+    "1": ["Keep the category enabled; developers should learn to filter the noise themselves.", "Mantener la categoría activa; los desarrolladores deben aprender a filtrar el ruido por sí mismos."]
+  },
+  "s5q17": {
+    "1": ["Asking the model to think harder and justify each severity it assigns.", "Pedir al modelo que piense más y justifique cada severidad que asigna."]
+  },
+  "s5q18": {
+    "1": ["Repeat the format instructions at both the start and the end of the prompt.", "Repetir las instrucciones de formato al principio y al final del prompt."],
+    "2": ["Use a larger model that follows long format instructions more reliably.", "Usar un modelo más grande que siga mejor las instrucciones de formato largas."]
+  },
+  "s5q19": {
+    "1": ["Disable control-flow checks entirely, since they are the main source of noise.", "Desactivar por completo las comprobaciones de flujo de control, ya que son la principal fuente de ruido."],
+    "2": ["Add a rule saying \"never flag early returns or guard clauses as complex\".", "Añadir una regla que diga «nunca marques como complejos los retornos tempranos ni las cláusulas de guarda»."]
+  },
+  "s5q20": {
+    "1": ["A unique finding ID so dismissals can be tracked.", "Un ID único por hallazgo para seguir los descartes."],
+    "2": ["The model version and temperature used for the run.", "La versión del modelo y la temperatura usadas en la ejecución."]
+  },
+  "s5q21": {
+    "1": ["Retry the request until the response parses.", "Reintentar la petición hasta que la respuesta se pueda parsear."],
+    "3": ["Strip any non-JSON characters with a regex before parsing.", "Quitar con una regex los caracteres que no sean JSON antes de parsear."]
+  },
+  "s5q22": {
+    "1": ["Retry the same request with the same prompt; the next run usually picks valid lines.", "Reintentar la misma petición con el mismo prompt; la siguiente ejecución suele elegir líneas válidas."],
+    "2": ["Drop every finding for that PR so no comment lands on a wrong line.", "Descartar todos los hallazgos de ese PR para que ningún comentario caiga en una línea equivocada."]
+  },
+  "s5q23": {
+    "1": ["Once a day, right after the nightly build.", "Una vez al día, justo después del build nocturno."],
+    "3": ["It cannot be guaranteed with a 24-hour batch window.", "No se puede garantizar con una ventana batch de 24 horas."]
+  },
+  "s5q24": {
+    "1": ["Resubmit all 8,000 requests so the audit results stay consistent.", "Reenviar las 8.000 peticiones para que los resultados sean consistentes."],
+    "2": ["Resubmit the 210 failed requests unchanged in a new batch.", "Reenviar sin cambios las 210 peticiones fallidas en un batch nuevo."]
+  },
+  "s5q25": {
+    "1": ["Submit everything now and fix the prompt after reading the results.", "Enviarlo todo ya y arreglar el prompt tras leer los resultados."],
+    "3": ["Set the largest possible max_tokens on every request in the batch.", "Poner el max_tokens más alto posible en cada petición del batch."]
+  },
+  "s5q26": {
+    "1": ["Batch requests cannot include a system prompt or tool definitions.", "Las peticiones batch no pueden incluir un system prompt ni definiciones de tools."]
+  },
+  "s5q27": {
+    "1": ["Ask the generating session to self-review its code with extended thinking enabled.", "Pedir a la sesión que generó el código que lo autorrevise con extended thinking activado."]
+  },
+  "s5q28": {
+    "2": ["Have reviewers focus only on findings from new contributors, who are most likely to introduce issues.", "Que los revisores se centren solo en los hallazgos de colaboradores nuevos, que son quienes más problemas introducen."],
+    "3": ["Ask the model for a confidence score per finding and treat high scores as final, skipping human review for them.", "Pedir al modelo una confianza por hallazgo y tomar las puntuaciones altas como definitivas, sin revisión humana."]
+  },
+  "s5q30": {
+    "1": ["A longer, explicit list of the function names that need tests.", "Una lista más larga y explícita de las funciones que necesitan tests."],
+    "2": ["A rule asking it to \"be thorough about coverage gaps\".", "Una regla que le pida «ser minucioso con los huecos de cobertura»."]
+  },
+  "s5q31": {
+    "2": ["Claude returns identical output for the same prompt, so voting adds nothing.", "Claude devuelve la misma salida para el mismo prompt, así que votar no aporta nada."],
+    "3": ["Triple runs make review comments too long and repetitive.", "Las tres pasadas hacen los comentarios demasiado largos y repetitivos."]
+  },
+  "s5q32": {
+    "2": ["Tell the model to pick the closest of the three categories for any new issue type.", "Decirle al modelo que elija la más parecida de las tres categorías para cualquier tipo nuevo."],
+    "3": ["Make category an optional free-text field so any label can be used.", "Hacer la categoría un campo opcional de texto libre para poder usar cualquier etiqueta."]
+  },
+  "s5q33": {
+    "1": ["Fully dynamic decomposition, re-planned for each PR.", "Descomposición totalmente dinámica, replanificada en cada PR."]
+  },
+  "s5q34": {
+    "2": ["A PostToolUse hook that reverts any push made to main.", "Un hook PostToolUse que revierta cualquier push hecho a main."]
+  },
+  "s5q35": {
+    "1": ["Exit the loop after a fixed 10 iterations.", "Salir del bucle tras 10 iteraciones fijas."]
+  },
+  "s5q36": {
+    "1": ["Ask the model to double-check that its JSON and line numbers are valid before answering.", "Pedir al modelo que compruebe que su JSON y sus números de línea son válidos antes de responder."],
+    "2": ["Post everything and let developers ignore or resolve the broken comments themselves.", "Publicarlo todo y dejar que los desarrolladores ignoren o resuelvan ellos mismos los comentarios rotos."]
+  },
+  "s5q37": {
+    "1": ["Always resume the previous session, since it already remembers every file it read and every comment it made.", "Reanudar siempre la sesión anterior, ya que recuerda todos los archivos que leyó y todos los comentarios que hizo."],
+    "3": ["Start a fresh review of the new diff without prior findings, so nothing biases the new pass.", "Empezar una revisión nueva del diff sin los hallazgos previos, para que nada sesgue la nueva pasada."]
+  }
+}

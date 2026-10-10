@@ -1,0 +1,336 @@
+{
+ "s5q11": {
+  "2": [
+   "The -p flag disables memory files for reproducibility, so no CLAUDE.md of any level is loaded in CI.",
+   "El flag -p desactiva los archivos de memoria por reproducibilidad, así que en CI no se carga ningún CLAUDE.md de ningún nivel."
+  ]
+ },
+ "s5q15": {
+  "2": [
+   "Have the model self-report a confidence score for every finding and post only the findings it scores above 0.9 on that scale.",
+   "Hacer que el modelo informe una confianza para cada hallazgo y publicar solo los que puntúe por encima de 0,9 en esa escala."
+  ]
+ },
+ "s5q18": {
+  "1": [
+   "Repeat the full format instructions at both the start and the end of the prompt so they are harder to miss.",
+   "Repetir las instrucciones de formato completas al principio y al final del prompt para que sea más difícil pasarlas por alto."
+  ]
+ },
+ "s5q19": {
+  "2": [
+   "Add a rule saying \"never flag early returns or guard clauses as complex control flow, in any file\".",
+   "Añadir una regla que diga «nunca marques como flujo de control complejo los retornos tempranos ni las cláusulas de guarda, en ningún archivo»."
+  ]
+ },
+ "s5q20": {
+  "2": [
+   "The model version, temperature and prompt hash used for that run.",
+   "La versión del modelo, la temperatura y el hash del prompt usados en esa ejecución."
+  ]
+ },
+ "s5q21": {
+  "3": [
+   "Strip any non-JSON characters with a regex, then parse what remains.",
+   "Quitar con una regex los caracteres que no sean JSON y parsear lo que quede."
+  ]
+ },
+ "s5q23": {
+  "3": [
+   "It cannot be guaranteed, because the batch window alone is 24 hours.",
+   "No se puede garantizar, porque solo la ventana batch ya son 24 horas."
+  ]
+ },
+ "s5q26": {
+  "1": [
+   "Batch requests cannot include a system prompt or any tool definitions at all.",
+   "Las peticiones batch no pueden incluir un system prompt ni ninguna definición de tools."
+  ]
+ },
+ "s5q27": {
+  "1": [
+   "Ask the generating session to self-review its own code with extended thinking enabled.",
+   "Pedir a la sesión que generó el código que autorrevise su propio código con extended thinking activado."
+  ]
+ },
+ "s5q28": {
+  "3": [
+   "Ask the model for a confidence score per finding and treat high scores as final, skipping human review entirely for those findings.",
+   "Pedir al modelo una confianza por hallazgo y tomar las altas como definitivas, sin ninguna revisión humana de esos hallazgos."
+  ]
+ },
+ "s5q30": {
+  "1": [
+   "A longer, explicit list of every function name that still needs tests.",
+   "Una lista más larga y explícita con cada función que aún necesita tests."
+  ]
+ },
+ "s5q35": {
+  "3": [
+   "Ask the model not to write any text until all files are read.",
+   "Pedir al modelo que no escriba texto hasta haber leído todos los archivos."
+  ]
+ },
+ "s5q36": {
+  "1": [
+   "Ask the model to double-check that its JSON and every line number are valid before it answers.",
+   "Pedir al modelo que compruebe que su JSON y cada número de línea son válidos antes de responder."
+  ]
+ },
+ "s5q37": {
+  "1": [
+   "Always resume the previous review session, since it already remembers every file it read and every comment it posted.",
+   "Reanudar siempre la sesión de revisión anterior, ya que recuerda cada archivo que leyó y cada comentario que publicó."
+  ]
+ },
+ "s6q01": {
+  "1": [
+   "Add \"respond with valid JSON only, no prose\" in capitals at the end of the prompt.",
+   "Añadir «responde solo con JSON válido, sin prosa» en mayúsculas al final del prompt."
+  ],
+  "2": [
+   "Add a repair step that fixes common JSON errors with regular expressions.",
+   "Añadir un paso de reparación que corrija los errores JSON comunes con expresiones regulares."
+  ]
+ },
+ "s6q02": {
+  "1": [
+   "Keep po_number required and add \"do not invent values\" to the prompt.",
+   "Mantener po_number obligatorio y añadir «no inventes valores» al prompt."
+  ],
+  "3": [
+   "Retry the extraction until a PO number is found in the document.",
+   "Reintentar la extracción hasta encontrar un número de orden en el documento."
+  ]
+ },
+ "s6q03": {
+  "2": [
+   "A strict enum of the known categories only, with no other values allowed.",
+   "Un enum estricto solo con las categorías conocidas, sin otros valores permitidos."
+  ],
+  "3": [
+   "Two separate calls: one to decide the category, one to extract the fields.",
+   "Dos llamadas separadas: una para decidir la categoría y otra para extraer los campos."
+  ]
+ },
+ "s6q05": {
+  "1": [
+   "Describe the required order of tool calls clearly in the system prompt, with an example.",
+   "Describir con claridad en el system prompt el orden obligatorio de llamadas a tools, con un ejemplo."
+  ],
+  "3": [
+   "Merge extraction and enrichment into one tool so the order is handled internally.",
+   "Fusionar extracción y enriquecimiento en una sola tool para que el orden se gestione dentro."
+  ]
+ },
+ "s6q06": {
+  "1": [
+   "The schema must be defined incorrectly, since a correct schema prevents bad sums.",
+   "El schema debe de estar mal definido, ya que uno correcto evita las sumas erróneas."
+  ],
+  "3": [
+   "Use a bigger model, which removes arithmetic errors in extracted values.",
+   "Usar un modelo más grande, que elimina los errores aritméticos en los valores extraídos."
+  ]
+ },
+ "s6q07": {
+  "1": [
+   "Switch to a larger model that understands regional number formats better.",
+   "Cambiar a un modelo más grande que entienda mejor los formatos numéricos regionales."
+  ],
+  "2": [
+   "Change the amount field to a string and let downstream systems parse it.",
+   "Cambiar el campo de importe a string y dejar que lo interpreten los sistemas posteriores."
+  ]
+ },
+ "s6q08": {
+  "1": [
+   "Resend exactly the same request; most failures pass on a second attempt.",
+   "Reenviar exactamente la misma petición; la mayoría de fallos pasan en un segundo intento."
+  ],
+  "3": [
+   "Lower the temperature and resend the original request without changes.",
+   "Bajar la temperatura y reenviar la petición original sin cambios."
+  ]
+ },
+ "s6q09": {
+  "1": [
+   "Retry the extraction with the validation error appended so the model looks harder for the tax ID.",
+   "Reintentar la extracción añadiendo el error de validación para que el modelo busque mejor el identificador fiscal."
+  ],
+  "3": [
+   "Make tax_id required in the schema so the model must always provide a value for it.",
+   "Hacer obligatorio tax_id en el schema para que el modelo siempre tenga que darle un valor."
+  ]
+ },
+ "s6q10": {
+  "1": [
+   "Extract only the stated total, since it is the legally binding figure on the invoice.",
+   "Extraer solo el total declarado, ya que es la cifra legalmente vinculante de la factura."
+  ],
+  "2": [
+   "Extract only the computed sum of the line items, since it is always arithmetically correct.",
+   "Extraer solo la suma calculada de las líneas, ya que siempre es aritméticamente correcta."
+  ]
+ },
+ "s6q11": {
+  "1": [
+   "Make the citations field optional so documents without one format still validate.",
+   "Hacer opcional el campo de citas para que los documentos sin un formato sigan validando."
+  ],
+  "3": [
+   "Only process papers that have a bibliography section at the end.",
+   "Procesar solo los papers que tengan una sección de bibliografía al final."
+  ]
+ },
+ "s6q12": {
+  "1": [
+   "Add \"be accurate and never guess quantities\" to the extraction prompt.",
+   "Añadir «sé preciso y nunca adivines cantidades» al prompt de extracción."
+  ],
+  "2": [
+   "Require a numeric grams field for every ingredient so outputs are always comparable.",
+   "Exigir un campo numérico de gramos para cada ingrediente, para que las salidas siempre sean comparables."
+  ]
+ },
+ "s6q14": {
+  "1": [
+   "Synchronous calls in a tight parallel loop.",
+   "Llamadas síncronas en un bucle paralelo intensivo."
+  ],
+  "2": [
+   "Streaming responses to process them faster.",
+   "Respuestas en streaming para procesarlas más rápido."
+  ]
+ },
+ "s6q15": {
+  "1": [
+   "Rely on results returning in submission order.",
+   "Confiar en que los resultados vuelvan en el orden de envío."
+  ],
+  "3": [
+   "Submit one separate batch per document.",
+   "Enviar un batch separado por cada documento."
+  ]
+ },
+ "s6q16": {
+  "1": [
+   "24 hours, matching the batch processing window.",
+   "24 horas, igual que la ventana de procesamiento batch."
+  ],
+  "3": [
+   "It cannot be guaranteed, since processing alone may take 24 hours.",
+   "No se puede garantizar, ya que solo el procesamiento puede tardar 24 horas."
+  ]
+ },
+ "s6q17": {
+  "1": [
+   "Tell the model to be more confident and use \"unclear\" much less often.",
+   "Decirle al modelo que tenga más confianza y use «unclear» mucho menos."
+  ],
+  "3": [
+   "Use \"unclear\" only when the model's self-reported confidence is below 0.8.",
+   "Usar «unclear» solo cuando la confianza autoinformada del modelo sea menor de 0,8."
+  ]
+ },
+ "s6q18": {
+  "1": [
+   "Ask the same extractor to re-check its output against the document in a second turn.",
+   "Pedir al mismo extractor que revise su salida contra el documento en un segundo turno."
+  ],
+  "2": [
+   "Run the same extraction twice with the same prompt and flag any differences.",
+   "Ejecutar la misma extracción dos veces con el mismo prompt y marcar las diferencias."
+  ]
+ },
+ "s6q20": {
+  "1": [
+   "Batch them and show a progress spinner until the results arrive.",
+   "Enviarlas en batch y mostrar un indicador de progreso hasta que lleguen los resultados."
+  ],
+  "2": [
+   "Batch them and poll for results every second to minimize the wait.",
+   "Enviarlas en batch y consultar los resultados cada segundo para minimizar la espera."
+  ]
+ },
+ "s6q21": {
+  "1": [
+   "Nothing further; 97% is above any reasonable automation threshold.",
+   "Nada más; el 97 % supera cualquier umbral razonable de automatización."
+  ],
+  "2": [
+   "The average of the model's self-reported confidence across all fields.",
+   "La media de la confianza autoinformada del modelo en todos los campos."
+  ]
+ },
+ "s6q22": {
+  "1": [
+   "Trust them permanently, since they already passed the confidence threshold.",
+   "Confiar en ellas para siempre, ya que superaron el umbral de confianza."
+  ],
+  "3": [
+   "Ask the model to re-verify each high-confidence extraction in a second pass.",
+   "Pedir al modelo que vuelva a verificar cada extracción de alta confianza en una segunda pasada."
+  ]
+ },
+ "s6q23": {
+  "1": [
+   "Use the model's raw confidence output with a fixed 0.5 cut-off for every field.",
+   "Usar la confianza bruta del modelo con un corte fijo en 0,5 para todos los campos."
+  ],
+  "2": [
+   "Route every field longer than 10 characters, since long values are more error-prone.",
+   "Enviar todos los campos de más de 10 caracteres, ya que los valores largos fallan más."
+  ]
+ },
+ "s6q24": {
+  "1": [
+   "The oldest documents first, since they have waited longest in the queue.",
+   "Primero los documentos más antiguos, ya que llevan más tiempo en la cola."
+  ],
+  "3": [
+   "Only high-confidence extractions, to confirm they are safe to automate fully.",
+   "Solo las extracciones de alta confianza, para confirmar que es seguro automatizarlas del todo."
+  ]
+ },
+ "s6q25": {
+  "1": [
+   "Use a model with a larger context window so the whole contract is read at once.",
+   "Usar un modelo con una ventana de contexto mayor para que lea todo el contrato de una vez."
+  ],
+  "2": [
+   "Ask it in the prompt to \"read the middle sections especially carefully\".",
+   "Pedirle en el prompt que «lea con especial atención las secciones del medio»."
+  ]
+ },
+ "s6q26": {
+  "2": [
+   "The model name, version and temperature used for the extraction.",
+   "El nombre, la versión y la temperatura del modelo usados en la extracción."
+  ],
+  "3": [
+   "A confidence score for each value, from 0 to 1.",
+   "Una puntuación de confianza para cada valor, de 0 a 1."
+  ]
+ },
+ "s6q27": {
+  "1": [
+   "Always take the first value found, since the main body of a contract takes precedence.",
+   "Tomar siempre el primer valor encontrado, ya que el cuerpo principal del contrato prevalece."
+  ],
+  "2": [
+   "Average the two amounts and note in a comment field that an amendment exists.",
+   "Promediar los dos importes y anotar en un campo de comentario que existe una adenda."
+  ]
+ },
+ "s6q28": {
+  "1": [
+   "Pick the vendor record that is used most often in past invoices.",
+   "Elegir el registro de proveedor que más se usa en facturas pasadas."
+  ],
+  "3": [
+   "Pick the record whose city is closest to the invoice's billing address.",
+   "Elegir el registro cuya ciudad esté más cerca de la dirección de facturación."
+  ]
+ }
+}
