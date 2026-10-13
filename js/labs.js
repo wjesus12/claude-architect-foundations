@@ -122,7 +122,7 @@
           fixOk = !!lab.options[oi].ok;
           CAF.$$('.qz__o', root).forEach(x => { const o = lab.options[x.dataset.o]; x.classList.add(o.ok ? 'is-ok' : x === b ? 'is-bad' : 'is-dim'); });
           const why = CAF.$('#labWhy', root); why.hidden = false;
-          why.innerHTML = lab.options.map((o, i) => `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${i === oi ? 'qz__w--me' : ''}"><span class="mono">${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.why, mode, 'span')}</div>`).join('');
+          why.innerHTML = order.map((i, k) => { const o = lab.options[i]; return `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${i === oi ? 'qz__w--me' : ''}"><span class="mono">${'ABCD'[k]} ${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.why, mode, 'span')}</div>`; }).join('');
           CAF.$('#st2', root).classList.replace('is-on', fixOk ? 'is-ok' : 'is-bad');
           finish();
         });

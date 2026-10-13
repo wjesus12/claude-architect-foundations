@@ -32,7 +32,7 @@
       return `<section class="apart" style="--i:${pi}">
         <header class="apart__head">
           <span class="apart__letter">${part.letter}</span>
-          <div><h2 class="apart__t">${CAF.L(part.title, mode)}</h2><div class="apart__blurb">${CAF.LB(part.blurb, mode, 'span')}</div></div>
+          <div><h2 class="apart__t">${CAF.L(part.title, mode)}${CAF.academyLevel(part.modules[0], mode) ? ` <span class="lvtag lvtag--${part.level}">${CAF.academyLevel(part.modules[0], mode).label}</span>` : ''}</h2><div class="apart__blurb">${CAF.LB(part.blurb, mode, 'span')}</div></div>
           <span class="apart__prog mono">${pd}/${part.modules.length}</span>
         </header>
         <ol class="apath">${mods}</ol>

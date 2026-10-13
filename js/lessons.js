@@ -64,6 +64,21 @@
     }
   }
 
+  /* ---------- «desde lo básico» (solo módulos de la academia) ---------- */
+  const LEVELS = { basic: { en: 'Basic', es: 'Básico' }, mid: { en: 'Intermediate', es: 'Intermedio' }, adv: { en: 'Advanced', es: 'Avanzado' } };
+  CAF.academyLevel = (id, mode) => { const part = CAF.academyPart(id), lv = part && LEVELS[part.level]; return lv ? { key: part.level, label: mode === 'en' ? lv.en : mode === 'es' ? lv.es : `${lv.en} · ${lv.es}` } : null; };
+  function basicsHTML(id, mode) {
+    const b = (CAF.ACADEMY_BASICS || {})[id]; if (!b) return '';
+    const T3 = (en, es) => mode === 'en' ? en : mode === 'es' ? es : `${en} · ${es}`;
+    return `<section class="lx-basics">
+      <div class="lx-basics__k mono">✻ ${T3('Start here · the basics', 'Empieza aquí · desde lo básico')}</div>
+      <div class="lx-basics__simple">${CAF.LB(b.simple, mode)}</div>
+      ${b.analogy ? `<div class="lx-basics__an"><span class="lx-basics__ico" aria-hidden="true">💡</span><div><div class="lx-basics__t mono">${T3('Picture it like this', 'Imagínalo así')}</div>${CAF.LB(b.analogy, mode)}</div></div>` : ''}
+      ${b.words && b.words.length ? `<div class="lx-basics__t mono">${T3('New words', 'Palabras nuevas')}</div><dl class="lx-basics__words">${b.words.map(w => `<div><dt>${CAF.esc(w.term)}</dt><dd>${CAF.LB(w, mode, 'span')}</dd></div>`).join('')}</dl>` : ''}
+      ${b.use ? `<div class="lx-basics__use"><span class="mono">▸ ${T3('Try it', 'Pruébalo')}</span> ${CAF.LB(b.use, mode, 'span')}</div>` : ''}
+    </section>`;
+  }
+
   /* ---------- mini-quiz ---------- */
   function quizHTML(l, mode) {
     if (!l.quiz || !l.quiz.length) return '';
@@ -92,7 +107,11 @@
       });
       const why = CAF.$('.qz__why', box);
       why.hidden = false;
-      why.innerHTML = q.options.map((o, i) => `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${i === oi ? 'qz__w--me' : ''}"><span class="mono">${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.why, mode, 'span')}</div>`).join('');
+      /* Las explicaciones siguen el orden en que se muestran las opciones (A, B, C, D), no el del archivo. */
+      why.innerHTML = CAF.$$('.qz__o', box).map((x, k) => {
+        const i = Number(x.dataset.o), o = q.options[i];
+        return `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${i === oi ? 'qz__w--me' : ''}"><span class="mono">${'ABCD'[k]} ${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.why, mode, 'span')}</div>`;
+      }).join('');
       CAF.G.recordAnswer({ qid: `L${l.id}-${box.dataset.q}`, domain: l.domain || null, ok, mode });
       const p = CAF.Store.P();
       const L = p.lessons[l.id] || (p.lessons[l.id] = {});
@@ -122,7 +141,7 @@
     const html = `
       <section class="vhero lx-hero">
         <div class="vhero__copy">
-          <div class="vhero__kicker mono">${academy ? `<a href="#/academia">~/academia</a> / ${label(id)} · ${CAF.esc(CAF.T(part.title, mode === 'bi' ? 'es' : mode))}` : `~/leccion/${id}${d ? ` · D${d.id} · ${d.weight}%` : ''}`}${l.minutes ? ` · ${l.minutes} min` : ''}</div>
+          <div class="vhero__kicker mono">${academy ? `<a href="#/academia">~/academia</a> / ${label(id)} · ${CAF.esc(CAF.T(part.title, mode === 'bi' ? 'es' : mode))}${CAF.academyLevel(id, mode) ? ` · <span class="lvtag lvtag--${CAF.academyLevel(id, mode).key}">${CAF.academyLevel(id, mode).label}</span>` : ''}` : `~/leccion/${id}${d ? ` · D${d.id} · ${d.weight}%` : ''}`}${l.minutes ? ` · ${l.minutes} min` : ''}</div>
           <h1 class="vhero__title">${d || academy ? `<span class="lx-id mono">${academy ? label(id) : id}</span> ` : ''}${CAF.L(title, mode)}</h1>
           ${l.summary ? `<div class="vhero__lede">${CAF.LB(l.summary, mode)}</div>` : ''}
           <div class="lx-lang"><span class="mono muted">idioma de esta lección</span>${CAF.langPicker(mode, 'lxlang')}</div>
@@ -131,7 +150,9 @@
       </section>
       <div class="lx-layout">
         <article class="lx-body">
+          ${academy ? basicsHTML(id, mode) : ''}
           ${l.objectives ? `<section class="lx-obj"><div class="lx-obj__k mono">${academy ? T3('What you will learn', 'Qué aprenderás') : T3('What the exam measures', 'Lo que mide el examen')}</div><ul>${l.objectives.map(o => `<li>${CAF.LB(o, mode, 'span')}</li>`).join('')}</ul></section>` : ''}
+          ${academy && (CAF.ACADEMY_BASICS || {})[id] ? `<div class="lx-deep"><span class="lx-deep__k mono">${T3('Go deeper · the technical detail', 'Profundiza · el detalle técnico')}</span><span class="lx-deep__s">${T3('Read it calmly; if a term is new, look it up in the glossary.', 'Léelo con calma; si un término es nuevo, búscalo en el glosario.')}</span></div>` : ''}
           ${l.blocks.map(b => block(b, mode)).join('')}
         </article>
         <aside class="lx-side">

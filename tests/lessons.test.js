@@ -9,6 +9,8 @@ CAF.addLessons = arr => arr.forEach(l => { if (REG[l.id]) throw new Error('dupli
 ['intro', 'd1', 'd2', 'd3', 'd4', 'd5'].forEach(n => load(`js/content/lessons-${n}.js`));
 load('js/content/academy-parts.js');
 'abcdefgh'.split('').forEach(n => load(`js/content/academy-${n}.js`));
+load('js/content/academy-basics-1.js');
+load('js/content/academy-basics-2.js');
 load('js/content/glossary.js');
 
 let errors = [], words = { en: 0, es: 0 };
@@ -24,7 +26,14 @@ const acad = Array.from({ length: 26 }, (_, i) => 'a' + String(i + 1).padStart(2
 const expected = ['0', 'en', ...CAF.allTS().map(t => t.id), ...acad];
 const inParts = CAF.ACADEMY.flatMap(p => p.modules);
 if (inParts.join() !== acad.join()) errors.push('CAF.ACADEMY no lista a01…a26 en orden: ' + inParts.join());
-CAF.ACADEMY.forEach(p => { bil(p.title, 'parte ' + p.letter); bil(p.blurb, 'parte ' + p.letter + '.blurb'); });
+CAF.ACADEMY.forEach(p => { bil(p.title, 'parte ' + p.letter); bil(p.blurb, 'parte ' + p.letter + '.blurb'); if (!['basic', 'mid', 'adv'].includes(p.level)) errors.push('parte ' + p.letter + ': nivel ' + p.level); });
+acad.forEach(id => {
+  const b = (CAF.ACADEMY_BASICS || {})[id];
+  if (!b) return errors.push(id + ': falta «desde lo básico»');
+  bil(b.simple, id + '.basics.simple'); bil(b.analogy, id + '.basics.analogy'); bil(b.use, id + '.basics.use');
+  if (!b.words || b.words.length < 2) errors.push(id + ': menos de 2 palabras nuevas');
+  (b.words || []).forEach((w, j) => { if (!w.term) errors.push(id + '.word' + j + ' sin término'); bil(w, id + '.word' + j); });
+});
 for (const id of expected) if (!REG[id]) errors.push('falta la lección ' + id);
 let quizzes = 0;
 for (const l of Object.values(REG)) {

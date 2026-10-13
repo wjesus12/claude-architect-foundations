@@ -71,7 +71,7 @@
               <span class="xo__k mono">${multi ? (on ? '☑' : '☐') : 'ABCDE'[k]}</span><span class="xo__t">${CAF.L(o.t, mode)}</span></button>`;
           }).join('')}
         </div>
-        ${opts.reveal ? `<div class="xq__why">${it.order.map(oi => { const o = q.o[oi]; return `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${sel.includes(oi) ? 'qz__w--me' : ''}"><span class="mono">${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.w, mode, 'span')}</div>`; }).join('')}
+        ${opts.reveal ? `<div class="xq__why">${it.order.map((oi, k) => { const o = q.o[oi]; return `<div class="qz__w ${o.ok ? 'qz__w--ok' : ''} ${sel.includes(oi) ? 'qz__w--me' : ''}"><span class="mono">${'ABCDE'[k]} ${o.ok ? '✓' : '✗'}</span>${CAF.LB(o.w, mode, 'span')}</div>`; }).join('')}
           <div class="xq__meta mono">D${q.d} · ${q.ts} · ${LEVEL[q.lv]}${q.pat && CAF.PATTERNS[q.pat] ? ` · ${U(mode, 'pattern', 'patrón')}: ${CAF.esc(CAF.T(CAF.PATTERNS[q.pat], mode))}` : ''} · <a href="#/leccion/${q.ts}">${U(mode, 'lesson', 'lección')} ${q.ts}</a></div></div>` : ''}
       </div>`;
   }

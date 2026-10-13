@@ -76,7 +76,7 @@
 .qz__o.is-dim { opacity: .55; }
 @keyframes shakeX { 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(2px); } }
 .qz__why { display: grid; gap: 8px; animation: rise .35s var(--ease); }
-.qz__w { display: grid; grid-template-columns: 20px 1fr; gap: 8px; font-size: 13.5px; color: var(--mute); padding: 8px 12px; border-radius: 8px; background: var(--well); }
+.qz__w { display: grid; grid-template-columns: 34px 1fr; gap: 8px; font-size: 13.5px; color: var(--mute); padding: 8px 12px; border-radius: 8px; background: var(--well); }
 .qz__w .mono { color: var(--err); }
 .qz__w--ok { color: var(--ink-2); }
 .qz__w--ok .mono { color: var(--ok); }
